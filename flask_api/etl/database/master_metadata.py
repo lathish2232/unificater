@@ -9,11 +9,12 @@ from .settings.db_settings import DATABASES
 
 class meta_data:
     def __init__(self):
-        self.connection = psycopg2.connect(DATABASES['master_connection_str'] )
-        
+        #self.connection = psycopg2.connect(DATABASES['master_connection_str'] )
+        pass
     def fetch_metadata(self,connectionid):
         try:
-            cursor=self.connection.cursor()
+            metadata_connection = psycopg2.connect(DATABASES['master_connection_str'] )
+            metadata_cursor=connection.cursor()
             select_sql=f"""
                         select dc.source_id,dc.connection_name,DCP.fieldId,value ,DCP.connection_id from public.datasource_connections as dc
                         inner join public.datasource as ds
@@ -22,9 +23,9 @@ class meta_data:
                         on dc.source_id = DCP.sourceid
                         where DCP.connection_id ={connectionid} and dc.connection_id = {connectionid}
                         """
-            cursor.execute(select_sql)
-            Tbldata=cursor.fetchall()
-            colnames = [desc[0] for desc in cursor.description]
+            metadata_cursor.execute(select_sql)
+            Tbldata=metadata_cursor.fetchall()
+            colnames = [desc[0] for desc in metadata_cursor.description]
             result=[]
             for row in Tbldata:
                 result.append(dict(zip(colnames,row)))
@@ -111,4 +112,6 @@ class meta_data:
         finally:
             cursor.close()
             connection.close()
+            metadata_cursor.close()
+            metadata_connection.close()
 

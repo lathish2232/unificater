@@ -25,6 +25,7 @@ class Databaseprocess(Connections):
         return data
 
     def validate_user_connection(self,user_input):
+     try:
         conn_values = user_input['connectionInfo']
         source_id = user_input['sourceID']
 
@@ -46,44 +47,34 @@ class Databaseprocess(Connections):
         db_name = data['6']
         port = data['7']
         print(server,host,user,password,db_name)
-    # postgrasql connection
+        # postgrasql connection
+        status = "successful"
         if server == 1:
             connect_str = f"dbname='{db_name}'user='{user}' host='{host}' password='{password}'"
             connection = psycopg2.connect(connect_str)
-            status = "successful"
-            if not connection:
-                status = "failed"
-            connection.close()    
-#Mysql connection
+        #Mysql connection
         elif server == 2:
             connection = mysql.connector.connect(host=host, user=user, password=password,database=db_name)
-            status = "successful"
-            if not connection:
-                status = "failed"
-# Oracle connection
+        # Oracle connection
         elif server == 3:
             connection = cx_Oracle.connect(user=user, password=password,dsn=host)
-            status ="successful"
-            if not connection:
-                status="failed"
-            connection.close()
-# SQL server connection
+        # SQL server connection
         elif server == 4:
             connection = pyodbc.connect(host=host,user=user, password =password,database =db_name,port=port,Driver='')
-            status = "successful"
-            if not connection:            
-                status = "failed"
-            connection.close()
-#sql Lite
+        #sql Lite
         elif server == 5:
             connection = sqlite3.connect(host =host)
-            status = "successful"
-            if not connection:
-                status = "failed"
-            connection.close()
+        else:
+            raise Exception("invalid server")
+
         if status =="successful":
             status= Connections.insert(self,user_input)
-        return status  
+     except Exception as e:
+        print("Error =%s"%str(e))
+        status="Failed"
+     finally:
+        connection.close()
+     return status  
     
     def get_connection_details(self, connection_name=None):
         if not  connection_name:

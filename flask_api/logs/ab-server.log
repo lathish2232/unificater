@@ -3440,3 +3440,473 @@ psycopg2.OperationalError: server closed the connection unexpectedly
 	before or while processing the request.
 
 2020-08-19 13:52:42,275 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 13:52:42] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 15:30:40,281 - app - INFO -AB-server api started Successfully
+2020-08-19 15:30:40,448 - app - INFO -5000
+2020-08-19 15:30:40,450 - app - INFO -runing ...
+2020-08-19 15:30:42,185 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 15:31:37,861 - app - INFO -Api Request Initiated
+2020-08-19 15:31:38,982 - app - INFO -ImmutableMultiDict([])
+2020-08-19 15:31:38,983 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\abhi\unificater_flask-master\flask_api\middleware\Databasesource.py", line 49, in run
+    data =Databaseprocess.get_datasource(self,source_id)
+  File "C:\Users\abhi\unificater_flask-master\flask_api\etl\database\databaseprocess.py", line 24, in get_datasource
+    data = self.showDatasource()
+AttributeError: 'DatabasesourceMiddleware' object has no attribute 'showDatasource'
+2020-08-19 15:31:38,989 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 15:31:38] "GET /datasources HTTP/1.1" 500 -
+2020-08-19 15:31:42,164 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 15:31:42] "GET /favicon.ico HTTP/1.1" 404 -
+2020-08-19 15:42:42,586 - app - INFO -AB-server api started Successfully
+2020-08-19 15:42:42,594 - app - INFO -5000
+2020-08-19 15:42:42,595 - app - INFO -runing ...
+2020-08-19 15:42:43,356 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 15:44:12,283 - app - INFO -Api Request Initiated
+2020-08-19 15:44:12,284 - app - INFO -ImmutableMultiDict([])
+2020-08-19 15:44:12,286 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\abhi\unificater_flask-master\flask_api\middleware\Databasesource.py", line 49, in run
+    data =self.etl_obj.get_datasource(self,source_id)
+TypeError: get_datasource() takes from 1 to 2 positional arguments but 3 were given
+2020-08-19 15:44:12,291 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 15:44:12] "GET /datasources HTTP/1.1" 500 -
+2020-08-19 15:45:17,625 - app - INFO -AB-server api started Successfully
+2020-08-19 15:45:17,631 - app - INFO -5000
+2020-08-19 15:45:17,631 - app - INFO -runing ...
+2020-08-19 15:45:18,266 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 15:45:39,230 - app - INFO -Api Request Initiated
+2020-08-19 15:45:39,231 - app - INFO -ImmutableMultiDict([])
+2020-08-19 15:45:39,237 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 15:45:39] "GET /datasources HTTP/1.1" 200 -
+2020-08-19 15:48:05,607 - app - INFO -AB-server api started Successfully
+2020-08-19 15:48:05,616 - app - INFO -5000
+2020-08-19 15:48:05,616 - app - INFO -runing ...
+2020-08-19 15:48:07,142 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 15:48:14,241 - app - INFO -Api Request Initiated
+2020-08-19 15:48:14,244 - app - INFO -ImmutableMultiDict([])
+2020-08-19 15:48:14,247 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 15:48:14] "GET /datasources HTTP/1.1" 200 -
+2020-08-19 15:51:23,788 - app - INFO -AB-server api started Successfully
+2020-08-19 15:51:23,801 - app - INFO -5000
+2020-08-19 15:51:23,802 - app - INFO -runing ...
+2020-08-19 15:51:24,864 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 15:51:31,190 - app - INFO -Api Request Initiated
+2020-08-19 15:51:31,192 - app - INFO -ImmutableMultiDict([])
+2020-08-19 15:51:31,197 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 15:51:31] "GET /datasources HTTP/1.1" 200 -
+2020-08-19 15:53:48,661 - app - INFO -AB-server api started Successfully
+2020-08-19 15:53:48,671 - app - INFO -5000
+2020-08-19 15:53:48,672 - app - INFO -runing ...
+2020-08-19 15:53:49,381 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 15:53:56,235 - app - INFO -Api Request Initiated
+2020-08-19 15:53:56,237 - app - INFO -ImmutableMultiDict([])
+2020-08-19 15:53:56,245 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\abhi\unificater_flask-master\flask_api\middleware\Databasesource.py", line 49, in run
+    data =self.etl_obj.get_datasource(source_id)
+  File "C:\Users\abhi\unificater_flask-master\flask_api\etl\database\databaseprocess.py", line 24, in get_datasource
+    data = self.showDatasource()
+  File "C:\Users\abhi\unificater_flask-master\flask_api\etl\database\save_connection.py", line 101, in showDatasource
+    self.cursor.close()
+AttributeError: 'Databaseprocess' object has no attribute 'cursor'
+2020-08-19 15:53:56,256 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 15:53:56] "GET /datasources HTTP/1.1" 500 -
+2020-08-19 16:07:59,674 - app - INFO -AB-server api started Successfully
+2020-08-19 16:07:59,683 - app - INFO -5000
+2020-08-19 16:07:59,684 - app - INFO -runing ...
+2020-08-19 16:08:00,886 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 16:08:11,700 - app - INFO -Api Request Initiated
+2020-08-19 16:08:11,701 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:08:11,705 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:08:11] "GET /datasources HTTP/1.1" 200 -
+2020-08-19 16:08:57,005 - app - INFO -AB-server api started Successfully
+2020-08-19 16:08:57,023 - app - INFO -5000
+2020-08-19 16:08:57,024 - app - INFO -runing ...
+2020-08-19 16:08:58,309 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 16:09:02,617 - app - INFO -Api Request Initiated
+2020-08-19 16:09:02,619 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:09:02,626 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:09:02] "GET /datasources HTTP/1.1" 200 -
+2020-08-19 16:11:24,603 - app - INFO -AB-server api started Successfully
+2020-08-19 16:11:24,618 - app - INFO -5000
+2020-08-19 16:11:24,619 - app - INFO -runing ...
+2020-08-19 16:11:25,750 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 16:11:30,111 - app - INFO -Api Request Initiated
+2020-08-19 16:11:30,113 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:11:31,806 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:11:31] "GET /datasources HTTP/1.1" 200 -
+2020-08-19 16:11:37,055 - app - INFO -Api Request Initiated
+2020-08-19 16:11:37,057 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:11:38,706 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:11:38] "GET /datasources HTTP/1.1" 200 -
+2020-08-19 16:14:03,143 - app - INFO -Api Request Initiated
+2020-08-19 16:14:03,146 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:14:03,152 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:14:03] "GET /datasources/2 HTTP/1.1" 200 -
+2020-08-19 16:14:22,638 - app - INFO -Api Request Initiated
+2020-08-19 16:14:22,639 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:14:22,643 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:14:22] "GET /datasources/2 HTTP/1.1" 200 -
+2020-08-19 16:15:57,639 - app - INFO -AB-server api started Successfully
+2020-08-19 16:15:57,652 - app - INFO -5000
+2020-08-19 16:15:57,653 - app - INFO -runing ...
+2020-08-19 16:15:58,513 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 16:16:06,202 - app - INFO -Api Request Initiated
+2020-08-19 16:16:06,203 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:16:08,089 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:16:08] "GET /datasources/2 HTTP/1.1" 200 -
+2020-08-19 16:16:16,991 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:16:16] "GET /datasources/ HTTP/1.1" 404 -
+2020-08-19 16:16:24,336 - app - INFO -Api Request Initiated
+2020-08-19 16:16:24,338 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:16:26,003 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:16:26] "GET /datasources HTTP/1.1" 200 -
+2020-08-19 16:17:13,966 - app - INFO -Api Request Initiated
+2020-08-19 16:17:13,967 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:17:15,653 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:17:15] "GET /datasources/2 HTTP/1.1" 200 -
+2020-08-19 16:18:46,648 - app - INFO -AB-server api started Successfully
+2020-08-19 16:18:46,656 - app - INFO -5000
+2020-08-19 16:18:46,657 - app - INFO -runing ...
+2020-08-19 16:18:47,441 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 16:18:53,252 - app - INFO -Api Request Initiated
+2020-08-19 16:18:53,253 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:18:54,942 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:18:54] "GET /datasources/2 HTTP/1.1" 200 -
+2020-08-19 16:26:06,155 - app - INFO -AB-server api started Successfully
+2020-08-19 16:26:06,172 - app - INFO -5000
+2020-08-19 16:26:06,173 - app - INFO -runing ...
+2020-08-19 16:26:07,715 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 16:26:18,201 - app - INFO -Api Request Initiated
+2020-08-19 16:26:18,202 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:26:18,203 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\abhi\unificater_flask-master\flask_api\middleware\Databasesource.py", line 49, in run
+    print("source id=%d"%source_id)
+TypeError: %d format: a number is required, not str
+2020-08-19 16:26:18,210 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:26:18] "GET /datasources/2 HTTP/1.1" 500 -
+2020-08-19 16:27:06,277 - app - INFO -AB-server api started Successfully
+2020-08-19 16:27:06,288 - app - INFO -5000
+2020-08-19 16:27:06,289 - app - INFO -runing ...
+2020-08-19 16:27:07,174 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 16:27:15,345 - app - INFO -Api Request Initiated
+2020-08-19 16:27:15,346 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:27:15,347 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\abhi\unificater_flask-master\flask_api\middleware\Databasesource.py", line 50, in run
+    data =self.etl_obj.get_datasource(source_id)
+  File "C:\Users\abhi\unificater_flask-master\flask_api\etl\database\databaseprocess.py", line 21, in get_datasource
+    print("inside get_datasource id = %d"%d)
+NameError: name 'd' is not defined
+2020-08-19 16:27:15,353 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:27:15] "GET /datasources/2 HTTP/1.1" 500 -
+2020-08-19 16:28:01,307 - app - INFO -AB-server api started Successfully
+2020-08-19 16:28:01,318 - app - INFO -5000
+2020-08-19 16:28:01,319 - app - INFO -runing ...
+2020-08-19 16:28:02,176 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 16:28:06,986 - app - INFO -Api Request Initiated
+2020-08-19 16:28:06,987 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:28:08,675 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:28:08] "GET /datasources/2 HTTP/1.1" 200 -
+2020-08-19 16:30:36,330 - app - INFO -AB-server api started Successfully
+2020-08-19 16:30:36,339 - app - INFO -5000
+2020-08-19 16:30:36,340 - app - INFO -runing ...
+2020-08-19 16:30:37,124 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 16:30:45,132 - app - INFO -Api Request Initiated
+2020-08-19 16:30:45,137 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:30:46,833 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:30:46] "GET /datasources/2 HTTP/1.1" 200 -
+2020-08-19 16:33:17,887 - app - INFO -AB-server api started Successfully
+2020-08-19 16:33:17,896 - app - INFO -5000
+2020-08-19 16:33:17,897 - app - INFO -runing ...
+2020-08-19 16:33:18,790 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 16:33:28,113 - app - INFO -Api Request Initiated
+2020-08-19 16:33:28,115 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:33:29,813 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:33:29] "GET /datasources/2 HTTP/1.1" 200 -
+2020-08-19 16:34:04,533 - app - INFO -AB-server api started Successfully
+2020-08-19 16:34:04,545 - app - INFO -5000
+2020-08-19 16:34:04,546 - app - INFO -runing ...
+2020-08-19 16:34:05,951 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 16:34:18,415 - app - INFO -Api Request Initiated
+2020-08-19 16:34:18,417 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:34:20,089 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:34:20] "GET /datasources/2 HTTP/1.1" 200 -
+2020-08-19 16:34:33,670 - app - INFO -Api Request Initiated
+2020-08-19 16:34:33,673 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:34:35,937 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:34:35] "GET /datasources/3 HTTP/1.1" 200 -
+2020-08-19 16:34:48,715 - app - INFO -Api Request Initiated
+2020-08-19 16:34:48,717 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:34:50,415 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:34:50] "GET /datasources/1 HTTP/1.1" 200 -
+2020-08-19 16:53:14,330 - app - INFO -AB-server api started Successfully
+2020-08-19 16:53:14,345 - app - INFO -5000
+2020-08-19 16:53:14,345 - app - INFO -runing ...
+2020-08-19 16:53:15,187 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 16:53:33,895 - app - INFO -Api Request Initiated
+2020-08-19 16:53:33,897 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:53:33,899 - app - INFO -{'1': 'POSTG_connection', '2': '35.226.209.188', '3': '', '4': 'guide_user', '5': 'guide_user123', '6': 'guide_database', '7': None}
+2020-08-19 16:53:36,753 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:53:36] "POST /datasources/connections HTTP/1.1" 200 -
+2020-08-19 16:55:44,366 - app - INFO -AB-server api started Successfully
+2020-08-19 16:55:44,374 - app - INFO -5000
+2020-08-19 16:55:44,375 - app - INFO -runing ...
+2020-08-19 16:55:45,149 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 16:55:53,235 - app - INFO -Api Request Initiated
+2020-08-19 16:55:53,237 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:55:53,238 - app - INFO -{'1': 'POSTG_connection', '2': '35.226.209.188', '3': '', '4': 'guide_user', '5': 'guide_user123', '6': 'guide_database', '7': None}
+2020-08-19 16:55:57,475 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:55:57] "POST /datasources/connections HTTP/1.1" 200 -
+2020-08-19 16:56:09,495 - app - INFO -Api Request Initiated
+2020-08-19 16:56:09,497 - app - INFO -ImmutableMultiDict([])
+2020-08-19 16:56:09,498 - app - INFO -{'1': 'POSTG_connection', '2': '35.226.209.188', '3': '', '4': 'guide_user', '5': 'guide_user123', '6': 'guide_database', '7': None}
+2020-08-19 16:56:12,398 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 16:56:12] "POST /datasources/connections HTTP/1.1" 200 -
+2020-08-19 17:01:36,660 - app - INFO -AB-server api started Successfully
+2020-08-19 17:01:36,684 - app - INFO -5000
+2020-08-19 17:01:36,685 - app - INFO -runing ...
+2020-08-19 17:01:38,059 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 17:03:10,672 - app - INFO -Api Request Initiated
+2020-08-19 17:03:10,674 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 17:03:10,675 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\abhi\unificater_flask-master\flask_api\middleware\Databasesource.py", line 42, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[int(request.args['offset']):int(request.args['limit'])]
+  File "C:\Users\abhi\unificater_flask-master\flask_api\middleware\Databasesource.py", line 42, in <lambda>
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[int(request.args['offset']):int(request.args['limit'])]
+TypeError: string indices must be integers
+2020-08-19 17:03:10,679 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 17:03:10] "GET /datasources/connection/32/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 17:10:16,535 - app - INFO -AB-server api started Successfully
+2020-08-19 17:10:16,552 - app - INFO -5000
+2020-08-19 17:10:16,553 - app - INFO -runing ...
+2020-08-19 17:10:17,649 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 17:10:25,444 - app - INFO -Api Request Initiated
+2020-08-19 17:10:25,447 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 17:10:29,007 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\abhi\unificater_flask-master\flask_api\middleware\Databasesource.py", line 44, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[int(request.args['offset']):int(request.args['limit'])]
+  File "C:\Users\abhi\unificater_flask-master\flask_api\middleware\Databasesource.py", line 44, in <lambda>
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[int(request.args['offset']):int(request.args['limit'])]
+TypeError: string indices must be integers
+2020-08-19 17:10:29,014 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 17:10:29] "GET /datasources/connection/32/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 17:14:13,560 - app - INFO -AB-server api started Successfully
+2020-08-19 17:14:13,573 - app - INFO -5000
+2020-08-19 17:14:13,573 - app - INFO -runing ...
+2020-08-19 17:14:14,787 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 17:14:22,070 - app - INFO -Api Request Initiated
+2020-08-19 17:14:22,071 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 17:14:25,495 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 17:14:25] "GET /datasources/connection/32/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 200 -
+2020-08-19 17:17:21,117 - app - INFO -AB-server api started Successfully
+2020-08-19 17:17:21,128 - app - INFO -5000
+2020-08-19 17:17:21,129 - app - INFO -runing ...
+2020-08-19 17:17:21,924 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 17:17:27,036 - app - INFO -Api Request Initiated
+2020-08-19 17:17:27,039 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 17:34:35,404 - app - INFO -AB-server api started Successfully
+2020-08-19 17:34:35,437 - app - INFO -5000
+2020-08-19 17:34:35,438 - app - INFO -runing ...
+2020-08-19 17:34:37,156 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 17:35:25,755 - app - INFO -Api Request Initiated
+2020-08-19 17:35:25,756 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 18:17:51,420 - app - INFO -AB-server api started Successfully
+2020-08-19 18:17:51,511 - app - INFO -5000
+2020-08-19 18:17:51,512 - app - INFO -runing ...
+2020-08-19 18:17:52,919 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 18:18:30,344 - app - INFO -Api Request Initiated
+2020-08-19 18:18:30,346 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 18:37:02,148 - app - INFO -AB-server api started Successfully
+2020-08-19 18:37:02,240 - app - INFO -5000
+2020-08-19 18:37:02,241 - app - INFO -runing ...
+2020-08-19 18:37:03,165 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 18:42:25,855 - app - INFO -Api Request Initiated
+2020-08-19 18:42:25,856 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 18:42:27,849 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 18:42:27] "GET /datasources/connection/32/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 200 -
+2020-08-19 18:43:13,391 - app - INFO -Api Request Initiated
+2020-08-19 18:43:13,393 - app - INFO -ImmutableMultiDict([('type', 'tables'), ('schema', 'public'), ('offset', '0'), ('limit', '10')])
+2020-08-19 18:43:15,373 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 18:43:15] "GET /datasources/connection/32/metadata?type=tables&schema=public&offset=0&limit=10 HTTP/1.1" 200 -
+2020-08-19 18:44:18,387 - app - INFO -Api Request Initiated
+2020-08-19 18:44:18,391 - app - INFO -ImmutableMultiDict([('type', 'columns'), ('schema', 'public'), ('table', 'color_table'), ('offset', '0'), ('limit', '10')])
+2020-08-19 18:44:22,846 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\abhi\unificater_flask-master\flask_api\middleware\Databasesource.py", line 44, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[int(request.args['offset']):int(request.args['limit'])]
+  File "C:\Users\abhi\unificater_flask-master\flask_api\middleware\Databasesource.py", line 44, in <lambda>
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[int(request.args['offset']):int(request.args['limit'])]
+TypeError: string indices must be integers
+2020-08-19 18:44:22,852 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 18:44:22] "GET /datasources/connection/30/metadata?type=columns&schema=public&table=color_table&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 18:45:09,507 - app - INFO -Api Request Initiated
+2020-08-19 18:45:09,509 - app - INFO -ImmutableMultiDict([('type', 'columns'), ('schema', 'public'), ('table', 'color_table'), ('offset', '0'), ('limit', '10')])
+2020-08-19 18:45:11,462 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 18:45:11] "GET /datasources/connection/32/metadata?type=columns&schema=public&table=color_table&offset=0&limit=10 HTTP/1.1" 200 -
+2020-08-19 18:45:53,605 - app - INFO -Api Request Initiated
+2020-08-19 18:45:53,606 - app - INFO -ImmutableMultiDict([('type', 'columns'), ('schema', 'public'), ('table', 'colr_table'), ('offset', '0'), ('limit', '10')])
+2020-08-19 18:45:55,661 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 18:45:55] "GET /datasources/connection/32/metadata?type=columns&schema=public&table=colr_table&offset=0&limit=10 HTTP/1.1" 200 -
+2020-08-19 18:46:13,070 - app - INFO -Api Request Initiated
+2020-08-19 18:46:13,071 - app - INFO -ImmutableMultiDict([('type', 'columns'), ('schema', 'public'), ('table', 'co_table'), ('offset', '0'), ('limit', '10')])
+2020-08-19 18:46:15,205 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 18:46:15] "GET /datasources/connection/32/metadata?type=columns&schema=public&table=co_table&offset=0&limit=10 HTTP/1.1" 200 -
+2020-08-19 18:46:46,746 - app - INFO -Api Request Initiated
+2020-08-19 18:46:46,747 - app - INFO -ImmutableMultiDict([('type', 'columns'), ('schema', 'public'), ('table', 'co'), ('offset', '0'), ('limit', '10')])
+2020-08-19 18:46:48,720 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 18:46:48] "GET /datasources/connection/32/metadata?type=columns&schema=public&table=co&offset=0&limit=10 HTTP/1.1" 200 -
+2020-08-19 18:47:07,344 - app - INFO -Api Request Initiated
+2020-08-19 18:47:07,346 - app - INFO -ImmutableMultiDict([('type', 'columns'), ('schema', 'public'), ('table', 'ABC'), ('offset', '0'), ('limit', '10')])
+2020-08-19 18:47:09,380 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 18:47:09] "GET /datasources/connection/32/metadata?type=columns&schema=public&table=ABC&offset=0&limit=10 HTTP/1.1" 200 -
+2020-08-19 18:47:33,915 - app - INFO -Api Request Initiated
+2020-08-19 18:47:33,916 - app - INFO -ImmutableMultiDict([('schema', 'public'), ('offset', '0'), ('limit', '10'), ('type', 'tables')])
+2020-08-19 18:47:35,970 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 18:47:35] "GET /datasources/connection/32/metadata?schema=public&offset=0&limit=10&type=tables HTTP/1.1" 200 -
+2020-08-19 18:48:05,475 - app - INFO -Api Request Initiated
+2020-08-19 18:48:05,476 - app - INFO -ImmutableMultiDict([('type', 'columns'), ('schema', 'public'), ('table', 'datasource'), ('offset', '0'), ('limit', '10')])
+2020-08-19 18:48:07,459 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 18:48:07] "GET /datasources/connection/32/metadata?type=columns&schema=public&table=datasource&offset=0&limit=10 HTTP/1.1" 200 -
+2020-08-19 18:50:07,066 - app - INFO -Api Request Initiated
+2020-08-19 18:50:07,071 - app - INFO -ImmutableMultiDict([('offset', '0'), ('limit', '10'), ('type', 'schemas')])
+2020-08-19 18:50:09,043 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 18:50:09] "GET /datasources/connection/32/metadata?offset=0&limit=10&type=schemas HTTP/1.1" 200 -
+2020-08-19 18:51:58,246 - app - INFO -Api Request Initiated
+2020-08-19 18:51:58,252 - app - INFO -ImmutableMultiDict([('type', 'tables'), ('schema', 'public'), ('offset', '0'), ('limit', '10\n')])
+2020-08-19 18:52:00,236 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 18:52:00] "GET /datasources/connection/32/metadata?type=tables&schema=public&offset=0&limit=10%0A HTTP/1.1" 200 -
+2020-08-19 18:53:40,118 - app - INFO -Api Request Initiated
+2020-08-19 18:53:40,125 - app - INFO -ImmutableMultiDict([('type', 'columns'), ('schema', 'public'), ('table', 'color_table'), ('offset', '0'), ('limit', '10')])
+2020-08-19 18:53:42,195 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 18:53:42] "GET /datasources/connection/32/metadata?type=columns&schema=public&table=color_table&offset=0&limit=10 HTTP/1.1" 200 -
+2020-08-19 19:35:21,483 - app - INFO -AB-server api started Successfully
+2020-08-19 19:35:21,500 - app - INFO -5000
+2020-08-19 19:35:21,500 - app - INFO -runing ...
+2020-08-19 19:35:21,536 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 19:35:28,115 - app - INFO -Api Request Initiated
+2020-08-19 19:35:28,122 - app - INFO -ImmutableMultiDict([])
+2020-08-19 19:35:28,124 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "E:\Blender\UNIFICATER\flask_api\middleware\Databasesource.py", line 51, in run
+    print("source id=%d"%source_id)
+TypeError: %d format: a number is required, not NoneType
+2020-08-19 19:35:28,171 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 19:35:28] "GET /datasources HTTP/1.1" 500 -
+2020-08-19 19:35:46,352 - app - INFO -Api Request Initiated
+2020-08-19 19:35:46,442 - app - INFO -ImmutableMultiDict([])
+2020-08-19 19:35:46,541 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "E:\Blender\UNIFICATER\flask_api\middleware\Databasesource.py", line 51, in run
+    print("source id=%d"%source_id)
+TypeError: %d format: a number is required, not NoneType
+2020-08-19 19:35:46,609 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 19:35:46] "GET /datasources HTTP/1.1" 500 -
+2020-08-19 19:37:50,578 - app - INFO -AB-server api started Successfully
+2020-08-19 19:37:50,588 - app - INFO -5000
+2020-08-19 19:37:50,588 - app - INFO -runing ...
+2020-08-19 19:37:50,611 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 19:37:56,565 - app - INFO -Api Request Initiated
+2020-08-19 19:37:56,615 - app - INFO -ImmutableMultiDict([])
+2020-08-19 19:37:56,673 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "E:\Blender\UNIFICATER\flask_api\middleware\Databasesource.py", line 51, in run
+    data =self.etl_obj.get_datasource(source_id)
+  File "E:\Blender\UNIFICATER\flask_api\etl\database\databaseprocess.py", line 21, in get_datasource
+    print("inside get_datasource id = %d"%id)
+TypeError: %d format: a number is required, not NoneType
+2020-08-19 19:37:56,721 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 19:37:56] "GET /datasources HTTP/1.1" 500 -
+2020-08-19 19:40:32,853 - app - INFO -AB-server api started Successfully
+2020-08-19 19:40:32,863 - app - INFO -5000
+2020-08-19 19:40:32,875 - app - INFO -runing ...
+2020-08-19 19:40:32,915 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 19:40:48,857 - app - INFO -Api Request Initiated
+2020-08-19 19:40:48,911 - app - INFO -ImmutableMultiDict([])
+2020-08-19 19:40:51,326 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 19:40:51] "GET /datasources HTTP/1.1" 200 -
+2020-08-19 19:41:20,385 - app - INFO -Api Request Initiated
+2020-08-19 19:41:20,389 - app - INFO -ImmutableMultiDict([])
+2020-08-19 19:41:35,774 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 19:41:35] "GET /datasources/2 HTTP/1.1" 200 -
+2020-08-19 19:41:57,916 - app - INFO -Api Request Initiated
+2020-08-19 19:41:57,916 - app - INFO -ImmutableMultiDict([])
+2020-08-19 19:42:13,243 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 19:42:13] "GET /datasources/2 HTTP/1.1" 200 -
+2020-08-19 19:42:27,646 - app - INFO -AB-server api started Successfully
+2020-08-19 19:42:27,664 - app - INFO -5000
+2020-08-19 19:42:27,667 - app - INFO -runing ...
+2020-08-19 19:42:27,691 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 19:42:29,684 - app - INFO -Api Request Initiated
+2020-08-19 19:42:29,686 - app - INFO -ImmutableMultiDict([])
+2020-08-19 19:42:32,074 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 19:42:32] "GET /datasources/2 HTTP/1.1" 200 -
+2020-08-19 19:46:03,209 - app - INFO -AB-server api started Successfully
+2020-08-19 19:46:03,239 - app - INFO -5000
+2020-08-19 19:46:03,239 - app - INFO -runing ...
+2020-08-19 19:46:03,279 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 19:46:10,701 - app - INFO -Api Request Initiated
+2020-08-19 19:46:10,701 - app - INFO -ImmutableMultiDict([])
+2020-08-19 19:46:26,176 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "E:\Blender\UNIFICATER\flask_api\middleware\Databasesource.py", line 51, in run
+    data =self.etl_obj.get_datasource(source_id)
+  File "E:\Blender\UNIFICATER\flask_api\etl\database\databaseprocess.py", line 22, in get_datasource
+    data = self.showconnectionInfo(id)
+  File "E:\Blender\UNIFICATER\flask_api\etl\database\save_connection.py", line 135, in showconnectionInfo
+    self.close_connection()
+  File "E:\Blender\UNIFICATER\flask_api\etl\database\save_connection.py", line 23, in close_connection
+    cursor.close()
+NameError: name 'cursor' is not defined
+2020-08-19 19:46:26,180 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 19:46:26] "GET /datasources/2 HTTP/1.1" 500 -
+2020-08-19 19:46:30,581 - app - INFO -Api Request Initiated
+2020-08-19 19:46:30,589 - app - INFO -ImmutableMultiDict([])
+2020-08-19 19:46:33,144 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 19:46:33] "GET /datasources/2 HTTP/1.1" 200 -
+2020-08-19 19:51:42,387 - app - INFO -Api Request Initiated
+2020-08-19 19:51:58,574 - app - INFO -ImmutableMultiDict([])
+2020-08-19 19:51:58,590 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 19:51:58] "GET /datasources/activeConnections HTTP/1.1" 200 -
+2020-08-19 19:53:01,691 - app - INFO -AB-server api started Successfully
+2020-08-19 19:53:01,707 - app - INFO -5000
+2020-08-19 19:53:01,739 - app - INFO -runing ...
+2020-08-19 19:53:01,922 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 19:53:07,547 - app - INFO -Api Request Initiated
+2020-08-19 19:53:07,748 - app - INFO -ImmutableMultiDict([])
+2020-08-19 19:53:07,912 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 19:53:07] "GET /datasources/activeConnections HTTP/1.1" 200 -
+2020-08-19 19:53:12,884 - app - INFO -Api Request Initiated
+2020-08-19 19:53:12,968 - app - INFO -ImmutableMultiDict([])
+2020-08-19 19:53:13,081 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 19:53:13] "GET /datasources/activeConnections HTTP/1.1" 200 -
+2020-08-19 19:53:15,812 - app - INFO -Api Request Initiated
+2020-08-19 19:53:15,932 - app - INFO -ImmutableMultiDict([])
+2020-08-19 19:53:16,044 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 19:53:16] "GET /datasources/activeConnections HTTP/1.1" 200 -
+2020-08-19 19:56:13,140 - app - INFO -AB-server api started Successfully
+2020-08-19 19:56:13,156 - app - INFO -5000
+2020-08-19 19:56:13,156 - app - INFO -runing ...
+2020-08-19 19:56:13,174 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 19:56:26,000 - app - INFO -Api Request Initiated
+2020-08-19 19:56:26,060 - app - INFO -ImmutableMultiDict([])
+2020-08-19 19:56:26,112 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 19:56:26] "GET /datasources/activeConnections HTTP/1.1" 200 -
+2020-08-19 19:59:48,429 - app - INFO -AB-server api started Successfully
+2020-08-19 19:59:48,437 - app - INFO -5000
+2020-08-19 19:59:48,437 - app - INFO -runing ...
+2020-08-19 19:59:48,455 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 19:59:55,305 - app - INFO -Api Request Initiated
+2020-08-19 19:59:55,353 - app - INFO -ImmutableMultiDict([])
+2020-08-19 20:00:10,706 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 20:00:10] "GET /datasources/activeConnections HTTP/1.1" 200 -
+2020-08-19 20:00:16,696 - app - INFO -Api Request Initiated
+2020-08-19 20:00:16,708 - app - INFO -ImmutableMultiDict([])
+2020-08-19 20:00:31,897 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 20:00:31] "GET /datasources/activeConnections HTTP/1.1" 200 -
+2020-08-19 20:02:41,280 - app - INFO -AB-server api started Successfully
+2020-08-19 20:02:41,300 - app - INFO -5000
+2020-08-19 20:02:41,301 - app - INFO -runing ...
+2020-08-19 20:02:41,322 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 20:02:47,632 - app - INFO -Api Request Initiated
+2020-08-19 20:02:47,634 - app - INFO -ImmutableMultiDict([])
+2020-08-19 20:03:02,911 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 20:03:02] "GET /datasources/activeConnections HTTP/1.1" 200 -
+2020-08-19 20:06:45,438 - app - INFO -AB-server api started Successfully
+2020-08-19 20:06:45,462 - app - INFO -5000
+2020-08-19 20:06:45,470 - app - INFO -runing ...
+2020-08-19 20:06:45,505 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 20:06:50,907 - app - INFO -Api Request Initiated
+2020-08-19 20:06:51,008 - app - INFO -ImmutableMultiDict([])
+2020-08-19 20:06:53,985 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 20:06:53] "GET /datasources/activeConnections HTTP/1.1" 200 -
+2020-08-19 20:07:43,431 - app - INFO -AB-server api started Successfully
+2020-08-19 20:07:43,473 - app - INFO -5000
+2020-08-19 20:07:43,485 - app - INFO -runing ...
+2020-08-19 20:07:43,529 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 20:07:47,255 - app - INFO -Api Request Initiated
+2020-08-19 20:07:47,357 - app - INFO -ImmutableMultiDict([])
+2020-08-19 20:07:49,661 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 20:07:49] "GET /datasources/activeConnections HTTP/1.1" 200 -
+2020-08-19 20:09:02,338 - app - INFO -Api Request Initiated
+2020-08-19 20:09:35,807 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 20:09:51,021 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "E:\Blender\UNIFICATER\flask_api\middleware\Databasesource.py", line 40, in run
+    metadata=self.etl_obj.get_db_object_metadata(connectionid)
+  File "E:\Blender\UNIFICATER\flask_api\etl\database\databaseprocess.py", line 87, in get_db_object_metadata
+    data = meta_data.fetch_metadata(self,connectionid)
+  File "E:\Blender\UNIFICATER\flask_api\etl\database\metadata.py", line 117, in fetch_metadata
+    metadata_cursor.close()
+UnboundLocalError: local variable 'metadata_cursor' referenced before assignment
+2020-08-19 20:09:51,053 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 20:09:51] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 20:10:07,981 - app - INFO -Api Request Initiated
+2020-08-19 20:10:07,989 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 20:10:23,138 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "E:\Blender\UNIFICATER\flask_api\middleware\Databasesource.py", line 40, in run
+    metadata=self.etl_obj.get_db_object_metadata(connectionid)
+  File "E:\Blender\UNIFICATER\flask_api\etl\database\databaseprocess.py", line 87, in get_db_object_metadata
+    data = meta_data.fetch_metadata(self,connectionid)
+  File "E:\Blender\UNIFICATER\flask_api\etl\database\metadata.py", line 117, in fetch_metadata
+    metadata_cursor.close()
+UnboundLocalError: local variable 'metadata_cursor' referenced before assignment
+2020-08-19 20:10:23,142 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 20:10:23] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 20:14:13,680 - app - INFO -AB-server api started Successfully
+2020-08-19 20:14:13,688 - app - INFO -5000
+2020-08-19 20:14:13,688 - app - INFO -runing ...
+2020-08-19 20:14:13,704 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 20:14:20,734 - app - INFO -Api Request Initiated
+2020-08-19 20:14:20,754 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 20:14:35,999 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "E:\Blender\UNIFICATER\flask_api\middleware\Databasesource.py", line 40, in run
+    metadata=self.etl_obj.get_db_object_metadata(connectionid)
+  File "E:\Blender\UNIFICATER\flask_api\etl\database\databaseprocess.py", line 87, in get_db_object_metadata
+    data = meta_data.fetch_metadata(self,connectionid)
+  File "E:\Blender\UNIFICATER\flask_api\etl\database\metadata.py", line 117, in fetch_metadata
+    metadata_cursor.close()
+UnboundLocalError: local variable 'metadata_cursor' referenced before assignment
+2020-08-19 20:14:36,007 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 20:14:36] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 20:14:42,468 - app - INFO -Api Request Initiated
+2020-08-19 20:14:42,468 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 20:14:46,144 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 20:14:46] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 200 -

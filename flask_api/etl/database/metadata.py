@@ -15,7 +15,8 @@ class meta_data(Connections):
 
     def fetch_metadata(self,connectionid):
         try:
-            metadata_cursor=self.connection.cursor()
+            metadata_connection = psycopg2.connect(DATABASES['master_connection_str'] )
+            metadata_cursor=metadata_connection.cursor()
             select_sql=f"""
                         select dc.source_id,dc.connection_name,DCP.fieldId,value ,DCP.connection_id from public.datasource_connections as dc
                         inner join public.datasource as ds
@@ -31,7 +32,6 @@ class meta_data(Connections):
             for row in Tbldata:
                 result.append(dict(zip(colnames,row)))
             data=result
-            metadata_cursor.close()
             if len(data)==0:
                 return "connection details not available"
             else:
@@ -52,29 +52,25 @@ class meta_data(Connections):
 
                 print(server_id,host,user,password,db_name)
     #postgres metadata   
-                connection=None
+                meta_data=[]
                 if server_id ==1:
                     try:
                         connect_str = f"dbname= '{db_name}' user='{user}' host='{host}' password='{password}' "
                         postgres_conn = psycopg2.connect(connect_str)
                         postgres_cursor = postgres_conn.cursor()
-                        select_sql ="""
-                                    SELECT TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,ORDINAL_POSITION,DATA_TYPE FROM INFORMATION_SCHEMA.columns
+                        metadata_select_sql ="""
+                                    SELECT TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,ORDINAL_POSITION,DATA_TYPE FROM 
+                                    INFORMATION_SCHEMA.columns
                                     WHERE table_schema = 'public' ORDER BY table_name ,ORDINAL_POSITION
                                     """
-                        postgres_cursor.execute(select_sql)
-                        result=postgres_cursor.fetchall()
-                        columnnames = [desc[0] for desc in postgres_cursor.description]
+                        metadata_cursor.execute(metadata_select_sql)
+                        result=metadata_cursor.fetchall()
+                        columnnames = [desc[0] for desc in metadata_cursor.description]
                         colnames = [i.upper() for i in columnnames] #convert columnnames to upper
-                        result=[]
                         for row in result:
-                            result.append(dict(zip(colnames,row)))
-                        postgres_cursor.close()
-                        postgres_conn.close()
-                        data=result
+                            meta_data.append(dict(zip(colnames,row)))
                     except:
-                        status = 'postgres fetch failed'
-                    return status
+                       raise
     #Mysql metadata
                 elif server_id == 2:
                     try:
@@ -89,14 +85,11 @@ class meta_data(Connections):
                                     order by Table_name;
                                     """
                         mysql_cursor.execute(select_sql)
-                        result=mysql_cursor.fetchall()
-                        data= result
+                        meta_data=mysql_cursor.fetchall()
                         mysql_cursor.close()
                         Mysql_conn.close()
                     except:
-                        status = 'mysql_data fetch failed'
-                    return status
-                   
+                        raise                  
 #sql server
                 elif server_id ==4:
                     try:
@@ -108,20 +101,16 @@ class meta_data(Connections):
                         mssql_cursor.execute(select_sql)
                         data =mssql_cursor.fetchall()
                         colnames = [desc[0] for desc in mssql_cursor.description]
-                        result=[]
                         for row in data:
-                            result.append(dict(zip(colnames,row)))
-                        data= result
+                            meta_data.append(dict(zip(colnames,row)))
                         mssql_cursor.close()
                         mssql_conn.close()
                     except:
-                        status = 'mysql_data fetch failed'
-                    return status
-                print(data)
-                return data
-
-        except:
-            print("connection failed")
+                        raise
+                return meta_data
+        except Exception as e:
+            print("connection failed=%s"%str(e))
             return "connection failed server closed the connection unexpectedly"  
-            
-
+        finally:
+            metadata_cursor.close()
+            metadata_connection.close()

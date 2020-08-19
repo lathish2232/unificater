@@ -29,22 +29,21 @@ model_health_200 =api.model('successResponse200',{'success':fields.Boolean,'stat
 
 log.info("AB-server api started Successfully")
 
+# middle ware object initialized 
+fp = DatabasesourceMiddleware()
+
 @api.route('/datasources/activeConnections')
 @api.response(200, 'Successful')
 @api.response(400, 'validation Error', model_400)
 @api.response(500, 'Internal processing Error', model_500)
 class datasources_active_connections(Resource):
-    
-    
-    
-    
     def get(self):
         """
         return a list of conferences
         """
         try:
             log.info("Api Request Initiated")
-            fp = DatabasesourceMiddleware()
+            #fp = DatabasesourceMiddleware()
             return_status, result = fp.run(request, active_connections_ind = True)
         except:
             result ={}
@@ -69,7 +68,7 @@ class datasources(Resource):
         """
         try:
             log.info("Api Request Initiated")
-            fp = DatabasesourceMiddleware()
+            #fp = DatabasesourceMiddleware()
             return_status, result = fp.run(request,id, connectionid)
         except:
             result ={}
@@ -85,7 +84,7 @@ class datasources(Resource):
     def post(self):
         try:
             log.info("Api Request Initiated")
-            fp = DatabasesourceMiddleware()
+            #fp = DatabasesourceMiddleware()
             return_status, result = fp.run(request, post_request = True)
         except Exception as e:
             result ={}

@@ -13,22 +13,28 @@ import datetime
 
 class Connections():
     def __init__(self):
-        self.connection = psycopg2.connect(DATABASES['master_connection_str'])	
-
+        #self.create_connection()
+        pass
+    def create_connection(self):
+        global connection,cursor
+        connection = psycopg2.connect(DATABASES['master_connection_str'])
+        cursor = connection.cursor()
+    def close_connection(self):
+        cursor.close()
+        connection.close()
     def insert(self,user_input):
-
+        self.create_connection()
         # get_connection name from user input  
         Connection_name=user_input['connectionInfo'][0]['value']
         source_id = int(user_input['sourceID'])
         cur_date =datetime.datetime.now()
 
-        try:
-            with self.connection:
-            
+        try:           
             # user input storing into Two tables and genariting Connection_id
 #---------------------------------------------------------------------------------------------------------------
             #checking user passing connection name in database table if it's not avilable go to if block
-                cursor =self.connection.cursor()
+                #cursor =self.connection.cursor()
+                
                 cursor.execute(f"select connection_id from datasource_connections where Connection_name ='{Connection_name}'")
                 data = cursor.fetchall()
 #-----------------------------------------------------------------------------------------------------------------------    
@@ -66,24 +72,23 @@ class Connections():
                     columns = user_values[0].keys()
                     query = "INSERT INTO datasource_conn_params ({}) VALUES %s".format(','.join(columns))
                     values = [[value for value in rows.values()] for rows in user_values]
-                    print(columns)
-                    print (values)
+
                     execute_values(cursor, query, values)
-                    self.connection.commit()
+                    connection.commit()
                     result ={'result': {'success': 'true', 'error': None}, }
                     result.update(connection_id)
                     return result
                 else:
                     return "connection name already available Please change the connection name"
                 cursor.close()
-        except:
+        except Exception as e:
             self.operation_status=1
-            print("insert failed")
-            raise
+        finally:
+             self.close_connection()
 
     def showDatasource(self):
         try:
-            cursor=self.connection.cursor()
+            self.create_connection()
             select_sql="""
                       select * from datasource
                        """
@@ -94,72 +99,48 @@ class Connections():
             for row in result:
                 self.result.append(dict(zip(colnames,row)))
             return self.result
-        except:
+        except Exception as e:
            self.operation_status=0
-           return "oops somthing wentwrong unable to fetch datasource"
+           return "oops something thing went wrong, unable to fetch datasource"
         finally:
-            cursor.close() 
+           self.close_connection() 
 
     def showconnectionInfo(self,id):
         try:
-            cursor=self.connection.cursor()
+            self.create_connection()
             select_sql=f"""
                       select field_id,field_name,type,isrequired from Req_connection_details where server_id ={id}
                        """
             cursor.execute(select_sql)
             result=cursor.fetchall()
             colnames = [desc[0] for desc in cursor.description]
-            self.result=[]
+            res=[]
             for row in result:
-                self.result.append(dict(zip(colnames,row)))
-            return self.result
-        except:
+                res.append(dict(zip(colnames,row)))
+            return res
+        except Exception as e:
            self.operation_status=0
            return "failed"
         finally:
-            cursor.close()  
-
-
-    def showConnections(self):
+           self.close_connection() 
+  
+    def showConnections(self):#show active connections
         try:
-            cursor=self.connection.cursor()
+            self.create_connection()
             select_sql="""
                       select * from datasource_conn_params
                        """
             cursor.execute(select_sql)
-            result=cursor.fetchall()
+            data=cursor.fetchall()
             colnames = [desc[0] for desc in cursor.description]
-            self.result=[]
-            for row in result:
-                self.result.append(dict(zip(colnames,row)))
-            return self.result
+            result=[]
+            for row in data:
+                result.append(dict(zip(colnames,row)))
+            return result
         except:
            self.operation_status=0
-           return "failed"
-        finally:
-            cursor.close()
-            
-    def showConnectionData(self,connection_name):
-        try:
-            cursor=self.connection.cursor()
-            select_sql=f"""
-                       select * from Guid_Connections where Connection_name='{connection_name}'
-                       """
-            cursor.execute(select_sql)
-            result=cursor.fetchall()
-            colnames = [desc[0] for desc in cursor.description]
-            self.result=[]
-            for row in result:
-                self.result.append(dict(zip(colnames,row)))
-            if len(self.result)==0:
-                return "connection_name not available"
-            else:
-                return self.result
-        except:
-            self.operation_status=0
-            return "failed"
-        finally:
-            cursor.close()
+           return "unable to connect database"
+
     def __del__(self):
         pass
         #self.connection.close()

@@ -15,7 +15,7 @@ handlers:
   info_file_handler:
     class: logging.handlers.RotatingFileHandler
     formatter: simple
-    filename: C:\Users\CSC\Desktop\Ramu_project\flask_api\logs\ab-server.log
+    filename: E:\Blender\UNIFICATER\flask_api\logs\ab-server.log
     maxBytes: 10485760 #10MB
     backupCount: 20
     encoding: utf-8
@@ -23,7 +23,7 @@ handlers:
   metrics_file_handler:
     class: logging.handlers.RotatingFileHandler
     formatter: metrics
-    filename: C:\Users\CSC\Desktop\Ramu_project\flask_api\logs\metrics.log
+    filename: E:\Blender\UNIFICATER\flask_api\logs\metrics.log
     maxBytes: 10485760 #10MB
     backupCount: 20
     encoding: utf-8

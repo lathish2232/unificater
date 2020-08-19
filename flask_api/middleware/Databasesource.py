@@ -13,8 +13,8 @@ class DatabasesourceMiddleware:
     
     
     def __init__ (self):
-        self.connection = psycopg2.connect(DATABASES['master_connection_str'])	
-        
+        #self.connection = psycopg2.connect(DATABASES['master_connection_str'])	
+        self.etl_obj=Databaseprocess()
          
     def run(self, request,id=None,connectionid=None,post_request=False,active_connections_ind=False):
         """
@@ -25,39 +25,37 @@ class DatabasesourceMiddleware:
 
         try:
             # validate payload
-            data=log.info(request.args)
+            log.info(request.args)
             if post_request:
                 user_input =request.json
-                data=Databaseprocess.validate_user_connection(self,user_input)
+                data=self.etl_obj.validate_user_connection(user_input)
 
             elif active_connections_ind:
-                data =Databaseprocess.get_connection_details(self)
+                data =self.etl_obj.get_connection_details()
             else:
-                if id:
-                    id=None #source_id calling as id
-                    data =Databaseprocess.get_datasource(self,id)
-
-                elif connectionid:
+                if connectionid:
                     metadata_dict ={'schemas':'TABLE_SCHEMA','tables':'TABLE_NAME','columns':'COLUMN_NAME'}
 
                     if request.args["type"] in metadata_dict :
-                        metadata=Databaseprocess.get_db_object_metadata(self,connectionid)
+                        metadata=self.etl_obj.get_db_object_metadata(connectionid)
+
                         if len(metadata)>0:
-                            data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+                            data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[int(request.args['offset']):int(request.args['limit'])]
                         else:
                             data ='No data rows was found'
                 else:
-                    data ="please check type value in request"
-                #else:
-                 #   data =Databaseprocess.get_datasource(self)   
-                
+                    source_id=None
+                    if id:
+                       source_id=int(id)
+
+                    data =self.etl_obj.get_datasource(source_id)    
             return_status = 200
             result['status'] = 1
             result ['data']=data
 
         except ValueError as e:
             result = {}
-            log.exception("Value Excerticon while submitting feedback")
+            log.exception("Value Exception while submitting feedback")
             result['status'] = 0
             return_status = 400
             result ['message'] = e.args[0]
