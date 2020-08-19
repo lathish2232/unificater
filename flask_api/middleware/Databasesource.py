@@ -14,6 +14,7 @@ class DatabasesourceMiddleware:
     
     def __init__ (self):
         self.connection = psycopg2.connect(DATABASES['master_connection_str'])	
+        
          
     def run(self, request,id=None,connectionid=None,post_request=False,active_connections_ind=False):
         """
@@ -33,19 +34,22 @@ class DatabasesourceMiddleware:
                 data =Databaseprocess.get_connection_details(self)
             else:
                 if id:
+                    id=None #source_id calling as id
                     data =Databaseprocess.get_datasource(self,id)
 
                 elif connectionid:
                     metadata_dict ={'schemas':'TABLE_SCHEMA','tables':'TABLE_NAME','columns':'COLUMN_NAME'}
+
                     if request.args["type"] in metadata_dict :
                         metadata=Databaseprocess.get_db_object_metadata(self,connectionid)
-                        print(metadata)
-                        data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
-                        
-                    else:
-                        data ="please check type value in request"
+                        if len(metadata)>0:
+                            data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+                        else:
+                            data ='No data rows was found'
                 else:
-                    data =Databaseprocess.get_datasource(self)   
+                    data ="please check type value in request"
+                #else:
+                 #   data =Databaseprocess.get_datasource(self)   
                 
             return_status = 200
             result['status'] = 1
@@ -62,6 +66,6 @@ class DatabasesourceMiddleware:
             log.exception("Exception while submitting feedback")
             return_status = 500
             result['status'] = 0
-            result ['message']  = ("Internal Error has occurred while processing the request")
+            result ['message']  = ('Internal Error has occurred while processing the request')
 
         return return_status ,result

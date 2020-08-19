@@ -76,33 +76,10 @@ class Connections():
                 else:
                     return "connection name already available Please change the connection name"
                 cursor.close()
-                self.connection.close()
         except:
             self.operation_status=1
             print("insert failed")
             raise
-
-
-    def update(self,connection_name,Connection_parameters):
-       try:
-            with self.connection:
-                update_sql="""
-                           update Datasource_conn_params set Connection_parameters=:Connection_parameters
-                           where connection_name=:connection_name
-                           """
-                self.connection.execute(update_sql,{'connection_name':connection_name,'Connection_parameters':Connection_parameters})
-       except:
-            self.operation_status=1
-
-    def delete(self,connection_name):
-       try:
-            with self.connection:
-                 delete_sql="""
-                            delete from Datasource_conn_params where Source_ID=:Source_ID
-                            """
-                 self.connection.execute(delete_sql,{'Source_ID':Source_ID})
-       except:
-            self.operation_status=1
 
     def showDatasource(self):
         try:
@@ -119,9 +96,9 @@ class Connections():
             return self.result
         except:
            self.operation_status=0
-           return "failed"
+           return "oops somthing wentwrong unable to fetch datasource"
         finally:
-            self.connection.close() 
+            cursor.close() 
 
     def showconnectionInfo(self,id):
         try:
@@ -140,7 +117,7 @@ class Connections():
            self.operation_status=0
            return "failed"
         finally:
-            self.connection.close()  
+            cursor.close()  
 
 
     def showConnections(self):
@@ -160,7 +137,7 @@ class Connections():
            self.operation_status=0
            return "failed"
         finally:
-            self.connection.close()
+            cursor.close()
             
     def showConnectionData(self,connection_name):
         try:
@@ -182,7 +159,7 @@ class Connections():
             self.operation_status=0
             return "failed"
         finally:
-            self.connection.close()
+            cursor.close()
     def __del__(self):
         pass
         #self.connection.close()

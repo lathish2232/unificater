@@ -13,16 +13,15 @@ from .settings.db_settings import DATABASES
 
 
 
-class Databaseprocess():
+class Databaseprocess(Connections):
     def __init__(self):
         #self.connection = psycopg2.connect(DATABASES['master_connection_str'])
         pass
     def get_datasource(self,id = None):
-        db_obj = Connections()
         if id:
-            data = db_obj.showconnectionInfo(id)
+            data = self.showconnectionInfo(id)
         else:
-            data = db_obj.showDatasource()
+            data = self.showDatasource()
         return data
 
     def validate_user_connection(self,user_input):
@@ -87,14 +86,12 @@ class Databaseprocess():
         return status  
     
     def get_connection_details(self, connection_name=None):
-        db_obj = Connections()
         if not  connection_name:
-            data = db_obj.showConnections()
+            data = self.showConnections()
         else:
-            data = db_obj.showConnectionData(connection_name)
+            data = self.showConnectionData(connection_name)
         return data
 
     def get_db_object_metadata(self,connectionid):
-        db_obj = meta_data()
-        data = db_obj.fetch_metadata(connectionid)
+        data = meta_data.fetch_metadata(self,connectionid)
         return data

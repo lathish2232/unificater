@@ -2732,3 +2732,711 @@ TypeError: string indices must be integers
 2020-08-18 21:18:35,541 - app - INFO -5000
 2020-08-18 21:18:35,568 - app - INFO -runing ...
 2020-08-18 21:18:35,698 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-18 21:51:40,463 - app - INFO -Api Request Initiated
+2020-08-18 21:51:42,033 - app - INFO -ImmutableMultiDict([('type', 'columns'), ('schema', 'iapp'), ('table', 'emp'), ('offset', '0'), ('limit', '10')])
+2020-08-18 21:51:57,141 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 43, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 43, in <lambda>
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: string indices must be integers
+2020-08-18 21:51:57,145 - werkzeug - INFO -127.0.0.1 - - [18/Aug/2020 21:51:57] "GET /datasources/connection/28/metadata?type=columns&schema=iapp&table=emp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-18 21:51:58,240 - werkzeug - INFO -127.0.0.1 - - [18/Aug/2020 21:51:58] "GET /favicon.ico HTTP/1.1" 404 -
+2020-08-19 07:07:12,320 - app - INFO -AB-server api started Successfully
+2020-08-19 07:07:12,351 - app - INFO -5000
+2020-08-19 07:07:12,351 - app - INFO -runing ...
+2020-08-19 07:07:12,414 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 07:09:07,354 - app - INFO -Api Request Initiated
+2020-08-19 07:09:23,302 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 07:09:23,342 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 07:09:23] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 07:09:34,727 - app - INFO -Api Request Initiated
+2020-08-19 07:09:36,290 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 07:09:51,770 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 43, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 43, in <lambda>
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: string indices must be integers
+2020-08-19 07:09:51,773 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 07:09:51] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 07:09:59,338 - app - INFO -Api Request Initiated
+2020-08-19 07:10:15,014 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 07:10:15,018 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 07:10:15] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 07:10:17,332 - app - INFO -Api Request Initiated
+2020-08-19 07:10:19,212 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 07:10:21,527 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 43, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 43, in <lambda>
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: string indices must be integers
+2020-08-19 07:10:21,527 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 07:10:21] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 07:10:24,157 - app - INFO -Api Request Initiated
+2020-08-19 07:10:26,073 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 07:10:29,259 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 43, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 43, in <lambda>
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: string indices must be integers
+2020-08-19 07:10:29,263 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 07:10:29] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 07:31:10,202 - app - INFO -AB-server api started Successfully
+2020-08-19 07:31:10,224 - app - INFO -5000
+2020-08-19 07:31:10,226 - app - INFO -runing ...
+2020-08-19 07:31:10,282 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 07:31:32,014 - app - INFO -Api Request Initiated
+2020-08-19 07:31:48,720 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 07:31:48,734 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 07:31:48] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 07:37:34,217 - app - INFO -Api Request Initiated
+2020-08-19 07:37:53,265 - app - INFO -ImmutableMultiDict([])
+2020-08-19 07:38:08,551 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 49, in run
+    data =Databaseprocess.get_datasource(self)
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\etl\database\databaseprocess.py", line 21, in get_datasource
+    db_obj = Connections()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\etl\database\save_connection.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 07:38:08,589 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 49, in run
+    data =Databaseprocess.get_datasource(self)
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\etl\database\databaseprocess.py", line 21, in get_datasource
+    db_obj = Connections()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\etl\database\save_connection.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "app.py", line 73, in get
+    return_status, result = fp.run(request,id, connectionid)
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 66, in run
+    result ['message']  = ('Internal Error has occurred while processing the request=%s'%str(e))
+UnboundLocalError: local variable 'e' referenced before assignment
+2020-08-19 07:38:08,597 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 07:38:08] "GET /datasources HTTP/1.1" 500 -
+2020-08-19 07:49:02,594 - app - INFO -Api Request Initiated
+2020-08-19 07:49:04,205 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 07:49:19,464 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 44, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 44, in <lambda>
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: string indices must be integers
+2020-08-19 07:49:19,466 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 44, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 44, in <lambda>
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: string indices must be integers
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "app.py", line 73, in get
+    return_status, result = fp.run(request,id, connectionid)
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 66, in run
+    result ['message']  = ('Internal Error has occurred while processing the request=%s'%str(e))
+UnboundLocalError: local variable 'e' referenced before assignment
+2020-08-19 07:49:19,470 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 07:49:19] "GET /datasources/connection/30/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 07:54:45,522 - app - INFO -Api Request Initiated
+2020-08-19 07:55:00,852 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 07:55:00,898 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 07:55:00] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 07:56:30,928 - app - INFO -AB-server api started Successfully
+2020-08-19 07:56:31,020 - app - INFO -5000
+2020-08-19 07:56:31,089 - app - INFO -runing ...
+2020-08-19 07:56:32,026 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 07:56:39,802 - app - INFO -Api Request Initiated
+2020-08-19 07:56:41,397 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 07:56:43,539 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 44, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 44, in <lambda>
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: string indices must be integers
+2020-08-19 07:56:43,543 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 07:56:43] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:01:03,418 - app - INFO -AB-server api started Successfully
+2020-08-19 08:01:03,457 - app - INFO -5000
+2020-08-19 08:01:03,527 - app - INFO -runing ...
+2020-08-19 08:01:04,310 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 08:01:08,104 - app - INFO -Api Request Initiated
+2020-08-19 08:01:09,428 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 08:01:24,522 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in <lambda>
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: string indices must be integers
+2020-08-19 08:01:24,526 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:01:24] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:04:59,615 - app - INFO -AB-server api started Successfully
+2020-08-19 08:04:59,674 - app - INFO -5000
+2020-08-19 08:04:59,675 - app - INFO -runing ...
+2020-08-19 08:04:59,713 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 08:06:25,483 - app - INFO -Api Request Initiated
+2020-08-19 08:06:40,833 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 08:06:40,849 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:06:40] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:06:44,935 - app - INFO -Api Request Initiated
+2020-08-19 08:06:46,444 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 08:07:01,578 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 41, in run
+    metadata=Databaseprocess.get_db_object_metadata(self,connectionid)
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\etl\database\databaseprocess.py", line 99, in get_db_object_metadata
+    data = db_obj.fetch_metadata(connectionid)
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\etl\database\metadata.py", line 18, in fetch_metadata
+    master_conn_str = Connections()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\etl\database\save_connection.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 08:07:01,680 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:07:01] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:07:05,484 - app - INFO -Api Request Initiated
+2020-08-19 08:07:20,899 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 08:08:25,160 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:08:25] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:08:31,308 - app - INFO -Api Request Initiated
+2020-08-19 08:08:46,732 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 08:08:46,740 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:08:46] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:08:51,073 - app - INFO -Api Request Initiated
+2020-08-19 08:09:06,355 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 08:09:06,393 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:09:06] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:09:26,578 - app - INFO -Api Request Initiated
+2020-08-19 08:09:41,822 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 08:09:41,827 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:09:41] "GET /datasources/connection/30/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:09:55,512 - app - INFO -Api Request Initiated
+2020-08-19 08:09:56,657 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 08:10:11,870 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 41, in run
+    metadata=Databaseprocess.get_db_object_metadata(self,connectionid)
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\etl\database\databaseprocess.py", line 99, in get_db_object_metadata
+    data = db_obj.fetch_metadata(connectionid)
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\etl\database\metadata.py", line 18, in fetch_metadata
+    master_conn_str = Connections()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\etl\database\save_connection.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 08:10:11,912 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:10:11] "GET /datasources/connection/30/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:10:15,860 - app - INFO -Api Request Initiated
+2020-08-19 08:10:31,158 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 08:10:31,231 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:10:31] "GET /datasources/connection/30/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:10:40,764 - app - INFO -Api Request Initiated
+2020-08-19 08:10:56,262 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 08:10:56,408 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:10:56] "GET /datasources/connection/30/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:12:09,651 - app - INFO -AB-server api started Successfully
+2020-08-19 08:12:09,763 - app - INFO -5000
+2020-08-19 08:12:09,917 - app - INFO -runing ...
+2020-08-19 08:12:11,297 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 08:13:25,303 - app - INFO -Api Request Initiated
+2020-08-19 08:13:42,531 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 08:13:42,722 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:13:42] "GET /datasources/connection/30/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:15:41,870 - app - INFO -AB-server api started Successfully
+2020-08-19 08:15:41,941 - app - INFO -5000
+2020-08-19 08:15:41,959 - app - INFO -runing ...
+2020-08-19 08:15:42,307 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 08:15:53,892 - app - INFO -Api Request Initiated
+2020-08-19 08:15:59,952 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 08:16:07,881 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: 'NoneType' object is not iterable
+2020-08-19 08:16:07,885 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:16:07] "GET /datasources/connection/30/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:24:34,937 - app - INFO -AB-server api started Successfully
+2020-08-19 08:24:34,960 - app - INFO -5000
+2020-08-19 08:24:34,969 - app - INFO -runing ...
+2020-08-19 08:24:35,033 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 08:24:39,871 - app - INFO -Api Request Initiated
+2020-08-19 08:24:41,152 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 08:24:56,305 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: 'NoneType' object is not iterable
+2020-08-19 08:24:56,335 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:24:56] "GET /datasources/connection/30/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:25:21,316 - app - INFO -Api Request Initiated
+2020-08-19 08:26:21,453 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 08:26:38,711 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: 'NoneType' object is not iterable
+2020-08-19 08:26:38,714 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:26:38] "GET /datasources/connection/30/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:27:21,681 - app - INFO -Api Request Initiated
+2020-08-19 08:27:22,908 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 08:27:38,152 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: 'NoneType' object is not iterable
+2020-08-19 08:27:38,161 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:27:38] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:28:20,748 - app - INFO -AB-server api started Successfully
+2020-08-19 08:28:20,766 - app - INFO -5000
+2020-08-19 08:28:20,769 - app - INFO -runing ...
+2020-08-19 08:28:20,811 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 08:28:25,957 - app - INFO -Api Request Initiated
+2020-08-19 08:28:41,085 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 08:28:41,103 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:28:41] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:28:44,499 - app - INFO -Api Request Initiated
+2020-08-19 08:28:59,838 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 08:28:59,845 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:28:59] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:29:02,705 - app - INFO -Api Request Initiated
+2020-08-19 08:29:03,930 - app - INFO -ImmutableMultiDict([('type', 'schemas'), ('offset', '0'), ('limit', '10')])
+2020-08-19 08:29:06,903 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:29:06] "GET /datasources/connection/28/metadata?type=schemas&offset=0&limit=10 HTTP/1.1" 200 -
+2020-08-19 08:31:29,637 - app - INFO -Api Request Initiated
+2020-08-19 08:31:30,751 - app - INFO -ImmutableMultiDict([('type', 'tables'), ('schema', 'iapp'), ('offset', '0'), ('limit', '10')])
+2020-08-19 08:31:45,905 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: 'NoneType' object is not iterable
+2020-08-19 08:31:45,914 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:31:45] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:31:56,335 - app - INFO -Api Request Initiated
+2020-08-19 08:31:57,501 - app - INFO -ImmutableMultiDict([('type', 'tables'), ('schema', 'iapp'), ('offset', '0'), ('limit', '10')])
+2020-08-19 08:32:12,700 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: 'NoneType' object is not iterable
+2020-08-19 08:32:12,706 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:32:12] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:32:17,922 - app - INFO -Api Request Initiated
+2020-08-19 08:32:33,154 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 08:32:33,192 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:32:33] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:32:38,820 - app - INFO -Api Request Initiated
+2020-08-19 08:32:40,122 - app - INFO -ImmutableMultiDict([('type', 'tables'), ('schema', 'iapp'), ('offset', '0'), ('limit', '10')])
+2020-08-19 08:32:55,305 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: 'NoneType' object is not iterable
+2020-08-19 08:32:55,313 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:32:55] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:32:59,680 - app - INFO -Api Request Initiated
+2020-08-19 08:33:15,021 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 08:33:15,038 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:33:15] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:33:18,871 - app - INFO -Api Request Initiated
+2020-08-19 08:33:20,002 - app - INFO -ImmutableMultiDict([('type', 'tables'), ('schema', 'iapp'), ('offset', '0'), ('limit', '10')])
+2020-08-19 08:33:35,152 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: 'NoneType' object is not iterable
+2020-08-19 08:33:35,157 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:33:35] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 08:33:40,091 - app - INFO -Api Request Initiated
+2020-08-19 08:33:41,237 - app - INFO -ImmutableMultiDict([('type', 'tables'), ('schema', 'iapp'), ('offset', '0'), ('limit', '10')])
+2020-08-19 08:33:56,520 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: 'NoneType' object is not iterable
+2020-08-19 08:33:56,542 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 08:33:56] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 13:03:01,578 - app - INFO -AB-server api started Successfully
+2020-08-19 13:03:01,611 - app - INFO -5000
+2020-08-19 13:03:01,611 - app - INFO -runing ...
+2020-08-19 13:03:01,699 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 13:10:17,437 - app - INFO -Api Request Initiated
+2020-08-19 13:10:17,569 - app - INFO -ImmutableMultiDict([('type', 'tables'), ('schema', 'iapp'), ('offset', '0'), ('limit', '10')])
+2020-08-19 13:10:17,725 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 44, in run
+    metadata=Databaseprocess.get_db_object_metadata(self,connectionid)
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\etl\database\databaseprocess.py", line 96, in get_db_object_metadata
+    data = self.fetch_metadata(connectionid)
+AttributeError: 'DatabasesourceMiddleware' object has no attribute 'fetch_metadata'
+2020-08-19 13:10:17,807 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 13:10:17] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 13:20:42,692 - app - INFO -AB-server api started Successfully
+2020-08-19 13:20:42,721 - app - INFO -5000
+2020-08-19 13:20:42,722 - app - INFO -runing ...
+2020-08-19 13:20:42,799 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 13:20:46,021 - app - INFO -Api Request Initiated
+2020-08-19 13:20:46,142 - app - INFO -ImmutableMultiDict([('type', 'tables'), ('schema', 'iapp'), ('offset', '0'), ('limit', '10')])
+2020-08-19 13:20:46,242 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 44, in run
+    metadata=Databaseprocess.get_db_object_metadata(self,connectionid)
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\etl\database\databaseprocess.py", line 96, in get_db_object_metadata
+    data = meta_data.fetch_metadata(connectionid)
+TypeError: fetch_metadata() missing 1 required positional argument: 'connectionid'
+2020-08-19 13:20:46,312 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 13:20:46] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 13:23:45,399 - app - INFO -AB-server api started Successfully
+2020-08-19 13:23:45,413 - app - INFO -5000
+2020-08-19 13:23:45,418 - app - INFO -runing ...
+2020-08-19 13:23:45,445 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 13:23:47,646 - app - INFO -Api Request Initiated
+2020-08-19 13:23:47,777 - app - INFO -ImmutableMultiDict([('type', 'tables'), ('schema', 'iapp'), ('offset', '0'), ('limit', '10')])
+2020-08-19 13:23:47,798 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in <lambda>
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: string indices must be integers
+2020-08-19 13:23:47,809 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 13:23:47] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 13:25:43,452 - app - INFO -AB-server api started Successfully
+2020-08-19 13:25:43,464 - app - INFO -5000
+2020-08-19 13:25:43,465 - app - INFO -runing ...
+2020-08-19 13:25:43,485 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 13:25:49,876 - app - INFO -Api Request Initiated
+2020-08-19 13:26:05,415 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 13:26:05,420 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 13:26:05] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 13:30:11,167 - app - INFO -Api Request Initiated
+2020-08-19 13:30:12,473 - app - INFO -ImmutableMultiDict([('type', 'tables'), ('schema', 'iapp'), ('offset', '0'), ('limit', '10')])
+2020-08-19 13:30:13,189 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in <lambda>
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: string indices must be integers
+2020-08-19 13:30:13,191 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 13:30:13] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 13:37:21,322 - app - INFO -AB-server api started Successfully
+2020-08-19 13:37:21,385 - app - INFO -5000
+2020-08-19 13:37:21,413 - app - INFO -runing ...
+2020-08-19 13:37:21,559 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 13:37:27,438 - app - INFO -Api Request Initiated
+2020-08-19 13:37:42,744 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 13:37:42,749 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 13:37:42] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 13:37:48,248 - app - INFO -Api Request Initiated
+2020-08-19 13:39:15,819 - app - INFO -ImmutableMultiDict([('type', 'tables'), ('schema', 'iapp'), ('offset', '0'), ('limit', '10')])
+2020-08-19 13:39:17,609 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in <lambda>
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: string indices must be integers
+2020-08-19 13:39:17,614 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 13:39:17] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 13:41:53,105 - app - INFO -AB-server api started Successfully
+2020-08-19 13:41:53,212 - app - INFO -5000
+2020-08-19 13:41:53,266 - app - INFO -runing ...
+2020-08-19 13:41:53,355 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 13:42:25,430 - app - INFO -AB-server api started Successfully
+2020-08-19 13:42:25,449 - app - INFO -5000
+2020-08-19 13:42:25,452 - app - INFO -runing ...
+2020-08-19 13:42:25,478 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 13:42:40,180 - app - INFO -Api Request Initiated
+2020-08-19 13:42:55,658 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 13:42:55,663 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 13:42:55] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 13:43:55,477 - app - INFO -AB-server api started Successfully
+2020-08-19 13:43:55,490 - app - INFO -5000
+2020-08-19 13:43:55,490 - app - INFO -runing ...
+2020-08-19 13:43:55,508 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 13:43:58,258 - app - INFO -Api Request Initiated
+2020-08-19 13:44:13,547 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 13:44:13,556 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 13:44:13] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 13:44:18,035 - app - INFO -Api Request Initiated
+2020-08-19 13:44:33,188 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 13:44:33,190 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 13:44:33] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 13:45:29,994 - app - INFO -Api Request Initiated
+2020-08-19 13:45:31,186 - app - INFO -ImmutableMultiDict([('type', 'tables'), ('schema', 'iapp'), ('offset', '0'), ('limit', '10')])
+2020-08-19 13:45:32,305 - app - ERROR -Exception while submitting feedback
+Traceback (most recent call last):
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in run
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 46, in <lambda>
+    data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[0:10]#[request.args['offset']:request.args['limit']]
+TypeError: string indices must be integers
+2020-08-19 13:45:32,308 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 13:45:32] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 13:51:10,572 - app - INFO -AB-server api started Successfully
+2020-08-19 13:51:10,583 - app - INFO -5000
+2020-08-19 13:51:10,584 - app - INFO -runing ...
+2020-08-19 13:51:10,605 - werkzeug - INFO - * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-08-19 13:51:15,168 - app - INFO -Api Request Initiated
+2020-08-19 13:51:30,573 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 13:51:30,585 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 13:51:30] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 13:51:34,338 - app - INFO -Api Request Initiated
+2020-08-19 13:51:49,462 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 13:51:49,548 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 13:51:49] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
+2020-08-19 13:52:26,928 - app - INFO -Api Request Initiated
+2020-08-19 13:52:42,206 - app - ERROR -Exception while submitting file processing Request
+Traceback (most recent call last):
+  File "app.py", line 72, in get
+    fp = DatabasesourceMiddleware()
+  File "C:\Users\CSC\Desktop\Ramu_project\flask_api\middleware\Databasesource.py", line 16, in __init__
+    self.connection = psycopg2.connect(DATABASES['master_connection_str'])
+  File "C:\Python\Python38\lib\site-packages\psycopg2\__init__.py", line 127, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+2020-08-19 13:52:42,275 - werkzeug - INFO -127.0.0.1 - - [19/Aug/2020 13:52:42] "GET /datasources/connection/28/metadata?type=tables&schema=iapp&offset=0&limit=10 HTTP/1.1" 500 -
