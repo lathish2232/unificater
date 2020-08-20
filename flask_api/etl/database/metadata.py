@@ -68,7 +68,6 @@ class meta_data(Connections):
                                     WHERE table_schema = '{schema}' ORDER BY table_name 
                                     """
                         elif type =="columns":
-                            print("i am in ----------------")
                             metadata_select_sql =f"""
                                    SELECT TABLE_SCHEMA,TABLE_NAME ,COLUMN_NAME FROM INFORMATION_SCHEMA.columns
                                    WHERE table_schema = '{schema}' and TABLE_NAME ='{table}' ORDER BY ORDINAL_POSITION
@@ -82,8 +81,9 @@ class meta_data(Connections):
                             meta_data.append(dict(zip(colnames,row)))
                         metadata_cursor.close()
                         postgres_conn.close()
-                    except Exception as e:
-                        print(str(e))
+                    except:
+                        print" mfetchingethod was failed"
+                        
     #Mysql metadata
                 elif server_id == 2:
                     try:
@@ -109,15 +109,26 @@ class meta_data(Connections):
                         mysql_cursor.close()
                         Mysql_conn.close()
                     except:
-                        print("failed to fetch")
+                        print("fetching method was failed from Mysql")
                         raise                  
 #sql server
                 elif server_id ==4:
                     try:
                         mssql_conn = pyodbc.connect(host=host,user=user,password=password,db_name=db_name,port=port,Trusted_connection='yes',Driver='ODBC Driver 13 for SQL Server')
                         mssql_cursor=mssql_conn.cursor()
+                        if type=="schemas":
                         select_sql =f"""
-                                        SELECT TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,ORDINAL_POSITION, DATA_TYPE FROM {db_name}.INFORMATION_SCHEMA.columns order by TABLE_NAME, ORDINAL_POSITION
+                                        SELECT Distinct TABLE_SCHEMA FROM {db_name}.INFORMATION_SCHEMA.columns order by TABLE_SCHEMA
+                                        """
+                        elif type=="tables":
+                            select_sql =f"""
+                                        SELECT TABLE_SCHEMA,TABLE_NAME FROM {db_name}.INFORMATION_SCHEMA.columns
+                                        Where TABLE_SCHEMA ='{schema}' order by TABLE_NAME
+                                        """
+                        elif type =="columns":
+                            select_sql =f"""
+                                        SELECT TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME FROM {db_name}.INFORMATION_SCHEMA.columns Where TABLE_SCHEMA ='{schema}' and TABLE_NAME='{table}'
+                                        order by ORDINAL_POSITION
                                         """
                         mssql_cursor.execute(select_sql)
                         data =mssql_cursor.fetchall()
@@ -127,7 +138,7 @@ class meta_data(Connections):
                         mssql_cursor.close()
                         mssql_conn.close()
                     except:
-                        print("failed to fetch")
+                        print("fetching method was failed from MS-SQLSERVER")
                         raise
                 return meta_data
         except Exception as e:
