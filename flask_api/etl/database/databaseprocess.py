@@ -83,6 +83,6 @@ class Databaseprocess(Connections):
             data = self.showConnectionData(connection_name)
         return data
 
-    def get_db_object_metadata(self,connectionid):
-        data = meta_data.fetch_metadata(self,connectionid)
+    def get_db_object_metadata(self,connectionid,type,schema,table):
+        data = meta_data.fetch_metadata(connectionid,type,schema,table)
         return data

@@ -35,9 +35,12 @@ class DatabasesourceMiddleware:
             else:
                 if connectionid:
                     metadata_dict ={'schemas':'TABLE_SCHEMA','tables':'TABLE_NAME','columns':'COLUMN_NAME'}
+                    type=request.args.get("type",None)
+                    schema=request.args.get("schema",None)
+                    table=request.args.get("table",None)
 
-                    if request.args["type"] in metadata_dict :
-                        metadata=self.etl_obj.get_db_object_metadata(connectionid)
+                    if request.args["type"] in metadata_dict:
+                        metadata=self.etl_obj.get_db_object_metadata(connectionid,type,schema,table)
 
                         if len(metadata)>0:
                             data=list(set(map(lambda element_dict:element_dict[metadata_dict[request.args['type']]],metadata)))[int(request.args['offset']):int(request.args['limit'])]

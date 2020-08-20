@@ -13,7 +13,7 @@ class meta_data(Connections):
     def __init__(self):
         pass
 
-    def fetch_metadata(self,connectionid):
+    def fetch_metadata(connectionid,type,schema,table):
         try:
             metadata_connection = psycopg2.connect(DATABASES['master_connection_str'] )
             metadata_cursor=metadata_connection.cursor()
@@ -57,38 +57,59 @@ class meta_data(Connections):
                     try:
                         connect_str = f"dbname= '{db_name}' user='{user}' host='{host}' password='{password}' "
                         postgres_conn = psycopg2.connect(connect_str)
-                        postgres_cursor = postgres_conn.cursor()
-                        metadata_select_sql ="""
-                                    SELECT TABLE_CATALOG,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,ORDINAL_POSITION,DATA_TYPE FROM 
-                                    INFORMATION_SCHEMA.columns
-                                    WHERE table_schema = 'public' ORDER BY table_name ,ORDINAL_POSITION
+                        if type=="schemas":
+                            metadata_select_sql ="""
+                                    SELECT Distinct TABLE_SCHEMA FROM INFORMATION_SCHEMA.columns
+                                    ORDER BY  TABLE_SCHEMA
                                     """
+                        elif type=="tables":
+                             metadata_select_sql =f"""
+                                    SELECT Distinct TABLE_SCHEMA,TABLE_NAME FROM INFORMATION_SCHEMA.columns
+                                    WHERE table_schema = '{schema}' ORDER BY table_name 
+                                    """
+                        elif type =="columns":
+                            print("i am in ----------------")
+                            metadata_select_sql =f"""
+                                   SELECT TABLE_SCHEMA,TABLE_NAME ,COLUMN_NAME FROM INFORMATION_SCHEMA.columns
+                                   WHERE table_schema = '{schema}' and TABLE_NAME ='{table}' ORDER BY ORDINAL_POSITION
+                                    """
+                        print(metadata_select_sql)
                         metadata_cursor.execute(metadata_select_sql)
                         result=metadata_cursor.fetchall()
                         columnnames = [desc[0] for desc in metadata_cursor.description]
                         colnames = [i.upper() for i in columnnames] #convert columnnames to upper
                         for row in result:
                             meta_data.append(dict(zip(colnames,row)))
-                    except:
-                       raise
+                        metadata_cursor.close()
+                        postgres_conn.close()
+                    except Exception as e:
+                        print(str(e))
     #Mysql metadata
                 elif server_id == 2:
                     try:
+
                         Mysql_conn = mysql.connector.connect(user=user,password=password,host=host,database=db_name)
                         mysql_cursor = Mysql_conn.cursor(dictionary=True)
-                        select_sql =r"""
-                                    SELECT  TN.TABLE_SCHEMA,TN.TABLE_TYPE,TN.TABLE_NAME,TC.COLUMN_NAME,TC.DATA_TYPE  FROM INFORMATION_SCHEMA.columns as TC
-                                    inner join INFORMATION_SCHEMA.Tables as TN
-                                    on TC.TABLE_CATALOG =TN.TABLE_CATALOG and TC.Table_name = Tn.Table_name
-                                    WHERE  TN.Table_type in ('BASE TABLE','VIEW') AND 
-                                    TN.TABLE_SCHEMA not in('mysql','information_schema','performance_schema','sys') 
-                                    order by Table_name;
+                        if type=="schemas":
+                            select_sql =r"""
+                                    Select Distinct TABLE_SCHEMA from INFORMATION_SCHEMA.columns;
+                                    """
+                        elif type=="tables":
+                            select_sql =f"""
+                                    Select Distinct TABLE_SCHEMA,TABLE_NAME from INFORMATION_SCHEMA.columns where TABLE_SCHEMA ='{schema}' ;
+                                    """
+                        elif type =="columns":
+                            select_sql =f"""
+                                    Select Distinct TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME from INFORMATION_SCHEMA.columns 
+                                    where TABLE_SCHEMA ='{schema}' and TABLE_NAME='{table}' ;
                                     """
                         mysql_cursor.execute(select_sql)
                         meta_data=mysql_cursor.fetchall()
+                        print(meta_data)
                         mysql_cursor.close()
                         Mysql_conn.close()
                     except:
+                        print("failed to fetch")
                         raise                  
 #sql server
                 elif server_id ==4:
@@ -106,6 +127,7 @@ class meta_data(Connections):
                         mssql_cursor.close()
                         mssql_conn.close()
                     except:
+                        print("failed to fetch")
                         raise
                 return meta_data
         except Exception as e:
