@@ -60,17 +60,17 @@ class meta_data(Connections):
                         if type=="schemas":
                             metadata_select_sql ="""
                                     SELECT Distinct TABLE_SCHEMA FROM INFORMATION_SCHEMA.columns
-                                    ORDER BY  TABLE_SCHEMA
+                                    ORDER BY  TABLE_SCHEMA;
                                     """
                         elif type=="tables":
                              metadata_select_sql =f"""
                                     SELECT Distinct TABLE_SCHEMA,TABLE_NAME FROM INFORMATION_SCHEMA.columns
-                                    WHERE table_schema = '{schema}' ORDER BY table_name 
+                                    WHERE table_schema = '{schema}' ORDER BY table_name;
                                     """
                         elif type =="columns":
                             metadata_select_sql =f"""
                                    SELECT TABLE_SCHEMA,TABLE_NAME ,COLUMN_NAME FROM INFORMATION_SCHEMA.columns
-                                   WHERE table_schema = '{schema}' and TABLE_NAME ='{table}' ORDER BY ORDINAL_POSITION
+                                   WHERE table_schema = '{schema}' and TABLE_NAME ='{table}' ORDER BY ORDINAL_POSITION;
                                     """
                         print(metadata_select_sql)
                         metadata_cursor.execute(metadata_select_sql)
@@ -82,7 +82,7 @@ class meta_data(Connections):
                         metadata_cursor.close()
                         postgres_conn.close()
                     except:
-                        print" mfetchingethod was failed"
+                        print(" fetching method was failed")
                         
     #Mysql metadata
                 elif server_id == 2:
@@ -101,7 +101,7 @@ class meta_data(Connections):
                         elif type =="columns":
                             select_sql =f"""
                                     Select Distinct TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME from INFORMATION_SCHEMA.columns 
-                                    where TABLE_SCHEMA ='{schema}' and TABLE_NAME='{table}' ;
+                                    where TABLE_SCHEMA ='{schema}' and TABLE_NAME='{table}';
                                     """
                         mysql_cursor.execute(select_sql)
                         meta_data=mysql_cursor.fetchall()
@@ -118,17 +118,17 @@ class meta_data(Connections):
                         mssql_cursor=mssql_conn.cursor()
                         if type=="schemas":
                         select_sql =f"""
-                                        SELECT Distinct TABLE_SCHEMA FROM {db_name}.INFORMATION_SCHEMA.columns order by TABLE_SCHEMA
+                                        SELECT Distinct TABLE_SCHEMA FROM {db_name}.INFORMATION_SCHEMA.columns order by TABLE_SCHEMA;
                                         """
                         elif type=="tables":
                             select_sql =f"""
                                         SELECT TABLE_SCHEMA,TABLE_NAME FROM {db_name}.INFORMATION_SCHEMA.columns
-                                        Where TABLE_SCHEMA ='{schema}' order by TABLE_NAME
+                                        Where TABLE_SCHEMA ='{schema}' order by TABLE_NAME;
                                         """
                         elif type =="columns":
                             select_sql =f"""
                                         SELECT TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME FROM {db_name}.INFORMATION_SCHEMA.columns Where TABLE_SCHEMA ='{schema}' and TABLE_NAME='{table}'
-                                        order by ORDINAL_POSITION
+                                        order by ORDINAL_POSITION;
                                         """
                         mssql_cursor.execute(select_sql)
                         data =mssql_cursor.fetchall()
