@@ -1,0 +1,68 @@
+
+
+from python to react templete 
+http://127.0.0.1:5000/instance
+_______________________________________________________
+files ==CSV
+
+{
+    "status": 1,
+    "data": {
+        "instance_id": 23,
+        "instance_name": "emp_data_23",
+		"type":"file",
+        "sub_type": "csv"
+		"data_instances":null
+    }
+}	
+
+------------------------------------------------------------------------
+files ==EXCEL
+{
+    "status": 1,
+    "data": {
+        "instance_id": 23,
+        "instance_name": "emp_data_23",
+		"type":"file",
+        "sub_type":"Excel',
+		"data_instances":[sheet1',sheet2]
+    }
+}
+
+---------------------------------------------------
+database
+
+{
+    "status": 1,
+    "data": {
+        "instance_id": 23,
+        "instance_name": "oracle.schema.table",
+		"type":"Database",
+        "sub_type":null,
+		"data_instances":null
+    }
+}
+
+{
+    "status": 1,
+    "data": {
+        "instance_id": 23,
+        "instance_name": "oracle.schema.table",
+		"type":"Database",
+        "sub_type":Table,
+		"data_instances":[table1,table2]
+		"query_text":null
+    }
+}
+
+{
+    "status": 1,
+    "data": {
+        "instance_id": 23,
+        "instance_name": "oracle.schema.table",
+		"type":"Database",
+        "sub_type":"query",
+		"data_instances": "ins_name"
+		"query_text":"select * from tablename"
+    }
+}
