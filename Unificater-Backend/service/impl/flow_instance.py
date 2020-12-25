@@ -53,7 +53,6 @@ class Data_source(Mongo_DB_Connector, FlowData):
                 return conn_validation.validate_db_conn(request_body,collection,keys,ufid)
       
             else:
-                print(keys,request_body)
                 self.insertMasterJsonItems(record, keys, 0, request_body)
                 self.db[collection].update_one({f'{collection}.UFID': ufid}, {'$set': record})
                 data = self.db[collection].find_one({}, {'_id': 0})

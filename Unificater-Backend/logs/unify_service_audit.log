@@ -24,3 +24,14 @@
 [2020-12-25 13:53:36,060] INFO [audit] - /cust_poj | GET | 200 | 0.001 | 2020-12-25 13:53:35.366 | 2020-12-25 13:53:36.060 | Success
 [2020-12-25 13:58:25,241] INFO [audit] - /connectionTypes/database | GET | 200 | 0.001 | 2020-12-25 13:58:24.397 | 2020-12-25 13:58:25.241 | Success
 [2020-12-25 13:58:33,190] INFO [audit] - /connectionTypes/database/postgreSql | GET | 200 | 0.001 | 2020-12-25 13:58:32.374 | 2020-12-25 13:58:33.190 | Success
+[2020-12-25 15:14:52,810] INFO [audit] - /flow | POST | 409 | 0.001 | 2020-12-25 15:14:52.129 | 2020-12-25 15:14:52.810 | cust_poj already exists
+[2020-12-25 15:15:03,293] INFO [audit] - /flow | DELETE | 202 | 0.001 | 2020-12-25 15:15:02.526 | 2020-12-25 15:15:03.293 | Flow cust_poj has been deleted successfully
+[2020-12-25 15:15:09,262] INFO [audit] - /flow | POST | 201 | 0.0 | 2020-12-25 15:15:08.962 | 2020-12-25 15:15:09.262 | Flow cust_poj created successfully.
+[2020-12-25 15:34:06,315] INFO [audit] - /cust_poj/instances/instancesId_1/databases | GET | 204 | 0.0 | 2020-12-25 15:34:05.963 | 2020-12-25 15:34:06.315 | No data available.
+[2020-12-25 15:34:12,933] INFO [audit] - /cust_poj/instances/instancesId_1/databases | GET | 204 | 0.001 | 2020-12-25 15:34:12.203 | 2020-12-25 15:34:12.933 | No data available.
+[2020-12-25 15:34:42,522] INFO [audit] - /cust_poj/instances/instancesId_1 | GET | 200 | 0.001 | 2020-12-25 15:34:41.883 | 2020-12-25 15:34:42.521 | Success
+[2020-12-25 15:34:47,982] INFO [audit] - /cust_poj/instances/instancesId_1/databases | GET | 204 | 0.001 | 2020-12-25 15:34:47.285 | 2020-12-25 15:34:47.982 | No data available.
+[2020-12-25 15:35:12,361] INFO [audit] - /cust_poj/instances/instancesId_1/databases | GET | 204 | 0.001 | 2020-12-25 15:35:11.583 | 2020-12-25 15:35:12.361 | No data available.
+[2020-12-25 19:35:41,475] INFO [audit] - /connectionTypes/singleFile | GET | 200 | 0.016 | 2020-12-25 19:35:25.879 | 2020-12-25 19:35:41.475 | Success
+[2020-12-25 19:37:20,826] INFO [audit] - /cust_poj/instances/instancesId_2 | GET | 200 | 0.001 | 2020-12-25 19:37:19.995 | 2020-12-25 19:37:20.826 | Success
+[2020-12-25 19:37:39,133] INFO [audit] - /cust_poj/instances/instancesId_2/dataInstances/dataInstancesId_1 | GET | 200 | 0.001 | 2020-12-25 19:37:38.498 | 2020-12-25 19:37:39.133 | Success

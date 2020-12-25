@@ -35,7 +35,7 @@ def process_request(request):
             m4 = pattern4.match(url_path)
         m1 = pattern1.match(url_path)
         m2 = pattern2.match(url_path)
-        
+        meta_obj = db_metadata()
         conn_obj = Data_source()
         if request.method == 'GET':
             if url_path.startswith('/connectionTypes'):
@@ -50,7 +50,6 @@ def process_request(request):
                 elif url_path == '/connectionTypes/database/' + m2.group(1):
                     data = get_db_connection_types(request, url_path)
             else:
-                meta_obj = db_metadata()
                 if url_path.endswith('/database'):
                     # take m4.group(2) for Instance_id and m4.group(3)
                     data = meta_obj.get_metadata(url_path, request)
@@ -66,7 +65,8 @@ def process_request(request):
                 data = create_flow(request)
             elif url_path == m3.group(1) + '/instances':
                 data = conn_obj.createFlow(request)
-
+            elif  url_path.endswith('/database'):
+                data = meta_obj.get_metadata(url_path, request)
         elif request.method == 'PUT':
             data = conn_obj.updateItems(request)
         elif request.method == 'DELETE':
