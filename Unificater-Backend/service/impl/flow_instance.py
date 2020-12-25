@@ -37,6 +37,7 @@ class Data_source(Mongo_DB_Connector, FlowData):
         return JsonResponse(success_response(data="updated successfylly"),status=status.HTTP_200_OK)
 
     def createFlow(self, request):
+        print('>>'*30)
         d = {'id': None}
         url = request.get_full_path()
         collection = url.split('/')[1]
@@ -48,10 +49,12 @@ class Data_source(Mongo_DB_Connector, FlowData):
         d['id'] = url.split('/')[-1] + "Id_" + str(id)
         request_body.update(d)
         if url.endswith('/instances'):
-            return conn_validation.validate_db_conn(request_body,collection,keys,ufid)
+            if request_body["type"]=="database":
+                return conn_validation.validate_db_conn(request_body,collection,keys,ufid)
       
-        else:
-            self.insertMasterJsonItems(record, keys, 0, request_body)
-            self.db[collection].update_one({f'{collection}.UFID': ufid}, {'$set': record})
-            data = self.db[collection].find_one({}, {'_id': 0})
-            return JsonResponse(success_response(data=data), status=status.HTTP_200_OK)
+            else:
+                print(keys,request_body)
+                self.insertMasterJsonItems(record, keys, 0, request_body)
+                self.db[collection].update_one({f'{collection}.UFID': ufid}, {'$set': record})
+                data = self.db[collection].find_one({}, {'_id': 0})
+                return JsonResponse(success_response(data=data), status=status.HTTP_200_OK)

@@ -120,3 +120,25 @@
 [2020-12-25 13:03:31,575] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():48] MongoDB connection closed
 [2020-12-25 13:07:45,178] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():39] Creating MongoDB connection
 [2020-12-25 13:07:45,319] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():48] MongoDB connection closed
+[2020-12-25 13:52:19,546] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():39] Creating MongoDB connection
+[2020-12-25 13:52:19,568] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():48] MongoDB connection closed
+[2020-12-25 13:52:54,471] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():39] Creating MongoDB connection
+[2020-12-25 13:52:54,706] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():48] MongoDB connection closed
+[2020-12-25 13:53:20,693] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\impl\master_json.py.get_flow():23] Get flow
+[2020-12-25 13:53:20,694] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.get_mongod_connection():12] Creating MongoDB connection
+[2020-12-25 13:53:20,709] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.get_mongod_connection():21] MongoDB connection closed
+[2020-12-25 13:53:35,366] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\impl\master_json.py.get_flow():23] Get flow
+[2020-12-25 13:53:35,395] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.get_mongod_connection():12] Creating MongoDB connection
+[2020-12-25 13:53:35,531] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.get_mongod_connection():21] MongoDB connection closed
+[2020-12-25 13:54:47,283] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():39] Creating MongoDB connection
+[2020-12-25 13:54:47,325] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():48] MongoDB connection closed
+[2020-12-25 13:57:14,445] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():39] Creating MongoDB connection
+[2020-12-25 13:57:14,541] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():48] MongoDB connection closed
+[2020-12-25 13:58:24,397] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\impl\database_impl.py.get_databases():21] Get databases
+[2020-12-25 13:58:24,448] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.get_mongod_connection():12] Creating MongoDB connection
+[2020-12-25 13:58:24,955] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.get_mongod_connection():21] MongoDB connection closed
+[2020-12-25 13:58:32,374] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\impl\database_impl.py.get_db_connection_types():50] Get databases connection params
+[2020-12-25 13:58:32,448] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.get_mongod_connection():12] Creating MongoDB connection
+[2020-12-25 13:58:32,643] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.get_mongod_connection():21] MongoDB connection closed
+[2020-12-25 13:58:56,388] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():39] Creating MongoDB connection
+[2020-12-25 13:58:56,424] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():48] MongoDB connection closed

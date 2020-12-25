@@ -20,3 +20,7 @@
 [2020-12-25 12:54:12,602] INFO [audit] - /boom123/instances/instancesId_1 | GET | 200 | 0.0 | 2020-12-25 12:54:12.345 | 2020-12-25 12:54:12.602 | Success
 [2020-12-25 12:54:23,904] INFO [audit] - /boom123/instances/instancesId_1/connectionParameters | GET | 200 | 0.0 | 2020-12-25 12:54:23.764 | 2020-12-25 12:54:23.904 | Success
 [2020-12-25 12:58:36,671] INFO [audit] - /boom123/instances/instancesId_1/ | GET | 204 | 0.001 | 2020-12-25 12:58:35.972 | 2020-12-25 12:58:36.671 | No data available.
+[2020-12-25 13:53:20,730] INFO [audit] - /cust_poj/instances | GET | 204 | 0.0 | 2020-12-25 13:53:20.693 | 2020-12-25 13:53:20.730 | No data available.
+[2020-12-25 13:53:36,060] INFO [audit] - /cust_poj | GET | 200 | 0.001 | 2020-12-25 13:53:35.366 | 2020-12-25 13:53:36.060 | Success
+[2020-12-25 13:58:25,241] INFO [audit] - /connectionTypes/database | GET | 200 | 0.001 | 2020-12-25 13:58:24.397 | 2020-12-25 13:58:25.241 | Success
+[2020-12-25 13:58:33,190] INFO [audit] - /connectionTypes/database/postgreSql | GET | 200 | 0.001 | 2020-12-25 13:58:32.374 | 2020-12-25 13:58:33.190 | Success
