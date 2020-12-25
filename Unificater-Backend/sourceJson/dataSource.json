@@ -1,0 +1,738 @@
+[{
+  "_id": {
+    "$oid": "5fe06f5c2f97cd2c20ba7db3"
+  },
+  "connectionJson": {
+    "connectionTypes": [
+      {
+        "id": "connTypeId_1",
+        "type": "singleFile",
+        "displayName": "Single File",
+        "connections": [
+          {
+            "id": "CSV",
+            "displayName": "CSV",
+            "functionName": "read_csv",
+            "isFwf": false,
+            "returnType": null,
+            "connectionParameters": [
+              {
+                "id": "fieldId_1",
+                "fieldName": "filepath_or_buffer",
+                "displayName": "File Path",
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": true,
+                "parameter_default_value": null,
+                "help": "Any valid string path is acceptable. The string could be a URL. Valid"
+              },
+              {
+                "id": "fieldId_2",
+                "fieldName": "delimiter",
+                "displayName": "Delimiter",
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": ",",
+                "help": "Delimiter to use. If sep is null, the C engine cannot automatically detect"
+              },
+              {
+                "id": "fieldId_3",
+                "fieldName": "header",
+                "displayName": "Header",
+                "userValue": null,
+                "parameter_data_type": "Integer",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "infer",
+                "help": "Row number(s) to use as the column names, and the start of the"
+              },
+              {
+                "id": "fieldId_4",
+                "fieldName": "names",
+                "displayName": "Names",
+                "userValue": null,
+                "parameter_data_type": " if no names",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "are passed the behavior is identical to ``header=0`` and column"
+              },
+              {
+                "id": "fieldId_5",
+                "fieldName": "index_col",
+                "displayName": "Index column",
+                "userValue": null,
+                "parameter_data_type": "Integer",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "Column(s) to use as the row labels of the ``DataFrame``, either given as"
+              },
+              {
+                "id": "fieldId_6",
+                "fieldName": "usecols",
+                "displayName": "select columns",
+                "userValue": null,
+                "parameter_data_type": "List",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "Return a subset of the columns. If list-like, all elements must either"
+              },
+              {
+                "id": "fieldId_7",
+                "fieldName": "squeeze",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "false",
+                "help": "If the parsed data only contains one column then return a Series."
+              },
+              {
+                "id": "fieldId_8",
+                "fieldName": "prefix",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "Prefix to add to column numbers when no header, e.g. 'X' for X0, X1, ..."
+              },
+              {
+                "id": "fieldId_9",
+                "fieldName": "mangle_dupe_cols",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "true",
+                "help": "Duplicate columns will be specified as 'X', 'X.1', ...'X.N', rather than"
+              },
+              {
+                "id": "fieldId_10",
+                "fieldName": "dtype",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Dictionary",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": null
+              },
+              {
+                "id": "fieldId_11",
+                "fieldName": "converters",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Dictionary",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "Dict of functions for converting values in certain columns. Keys can either"
+              },
+              {
+                "id": "fieldId_12",
+                "fieldName": "true_values",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "List",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "Values to consider as true."
+              },
+              {
+                "id": "fieldId_13",
+                "fieldName": "false_values",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "List",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "Values to consider as false."
+              },
+              {
+                "id": "fieldId_14",
+                "fieldName": "skipinitialspace",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "false",
+                "help": "Skip spaces after delimiter."
+              },
+              {
+                "id": "fieldId_15",
+                "fieldName": "skiprows",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Integer",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "Line numbers to skip (0-indexed) or number of lines to skip (int)"
+              },
+              {
+                "id": "fieldId_16",
+                "fieldName": "skipfooter",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Integer",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "0",
+                "help": "Number of lines at bottom of file to skip (Unsupported with engine='c')."
+              },
+              {
+                "id": "fieldId_17",
+                "fieldName": "nrows",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Integer",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "Number of rows of file to read. Useful for reading pieces of large files."
+              },
+              {
+                "id": "fieldId_18",
+                "fieldName": "na_values",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "Additional strings to recognize as NA/NaN. If dict passed, specific"
+              },
+              {
+                "id": "fieldId_19",
+                "fieldName": "keep_default_na",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "true",
+                "help": "Whether or not to include the default NaN values when parsing the data."
+              },
+              {
+                "id": "fieldId_20",
+                "fieldName": "na_filter",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "true",
+                "help": "Detect missing value markers (empty strings and the value of na_values). In"
+              },
+              {
+                "id": "fieldId_21",
+                "fieldName": "verbose",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "false",
+                "help": "Indicate number of NA values placed in non-numeric columns."
+              },
+              {
+                "id": "fieldId_22",
+                "fieldName": "skip_blank_lines",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "true",
+                "help": "If true, skip over blank lines rather than interpreting as NaN values."
+              },
+              {
+                "id": "fieldId_23",
+                "fieldName": "parse_dates",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Integer",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "false",
+                "help": null
+              },
+              {
+                "id": "fieldId_24",
+                "fieldName": "infer_datetime_format",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "false",
+                "help": "If true and `parse_dates` is enabled, pandas will attempt to infer the"
+              },
+              {
+                "id": "fieldId_25",
+                "fieldName": "keep_date_col",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "false",
+                "help": "If true and `parse_dates` specifies combining multiple columns then"
+              },
+              {
+                "id": "fieldId_26",
+                "fieldName": "date_parser",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": " function, optional",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "Function to use for converting a sequence of string columns to an  of"
+              },
+              {
+                "id": "fieldId_27",
+                "fieldName": "dayfirst",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "false",
+                "help": "DD/MM format dates, international and European format."
+              },
+              {
+                "id": "fieldId_28",
+                "fieldName": "cache_dates",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "true",
+                "help": "If true, use a cache of unique, converted dates to apply the datetime"
+              },
+              {
+                "id": "fieldId_29",
+                "fieldName": "iterator",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "false",
+                "help": "Return TextFileReader object for iteration or getting chunks with"
+              },
+              {
+                "id": "fieldId_30",
+                "fieldName": "chunksize",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Integer",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "Return TextFileReader object for iteration."
+              },
+              {
+                "id": "fieldId_31",
+                "fieldName": "compression",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "['infer', 'gzip', 'bz2', 'zip', 'xz', null]",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "infer",
+                "help": "For on-the-fly decompression of on-disk data. If 'infer' and"
+              },
+              {
+                "id": "fieldId_32",
+                "fieldName": "thousands",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "Thousands separator."
+              },
+              {
+                "id": "fieldId_33",
+                "fieldName": "decimal",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": ".",
+                "help": "Character to recognize as decimal point (e.g. use ',' for European data)."
+              },
+              {
+                "id": "fieldId_34",
+                "fieldName": "lineterminator",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "Character to break file into lines. Only valid with C parser."
+              },
+              {
+                "id": "fieldId_35",
+                "fieldName": "quotechar",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "''",
+                "help": "The character used to denote the start and end of a quoted item. Quoted"
+              },
+              {
+                "id": "fieldId_36",
+                "fieldName": "quoting",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Integer",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "0",
+                "help": "Control field quoting behavior per ``csv.QUOTE_*`` constants. Use one of"
+              },
+              {
+                "id": "fieldId_37",
+                "fieldName": "doublequote",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "true",
+                "help": "When quotechar is specified and quoting is not ``QUOTE_null``, indicate"
+              },
+              {
+                "id": "fieldId_38",
+                "fieldName": "escapechar",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "One-character string used to escape other characters."
+              },
+              {
+                "id": "fieldId_39",
+                "fieldName": "comment",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "Indicates remainder of line should not be parsed. If found at the beginning"
+              },
+              {
+                "id": "fieldId_40",
+                "fieldName": "encoding",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "Encoding to use for UTF when reading/writing (ex. 'utf-8'). `List of Python"
+              },
+              {
+                "id": "fieldId_41",
+                "fieldName": "dialect",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "If provided, this parameter will override values (default or not) for the"
+              },
+              {
+                "id": "fieldId_42",
+                "fieldName": "error_bad_lines",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "true",
+                "help": "Lines with too many fields (e.g. a csv line with too many commas) will by"
+              },
+              {
+                "id": "fieldId_43",
+                "fieldName": "warn_bad_lines",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "true",
+                "help": "If error_bad_lines is false, and warn_bad_lines is true, a warning for each"
+              },
+              {
+                "id": "fieldId_44",
+                "fieldName": "delim_whitespace",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "false",
+                "help": "Specifies whether or not whitespace (e.g. `` '`` or ``'\\t'``) will be"
+              },
+              {
+                "id": "fieldId_45",
+                "fieldName": "low_memory",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "true",
+                "help": "Internally process the file in chunks, resulting in lower memory use"
+              },
+              {
+                "id": "fieldId_46",
+                "fieldName": "memory_map",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Boolean",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "false",
+                "help": "If a filepath is provided for `filepath_or_buffer`, map the file object"
+              },
+              {
+                "id": "fieldId_47",
+                "fieldName": "float_precision",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "Specifies which converter the C engine should use for floating-point"
+              }
+            ]
+          },
+          {
+            "id": "FWF",
+            "displayName": "Fixed width file",
+            "functionName": "read_FWF",
+            "isFwf": true,
+            "returnType": null,
+            "connectionParameters": [
+              {
+                "id": "fieldId_1",
+                "fieldName": "filepath_or_buffer",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": true,
+                "parameter_default_value": null,
+                "help": "Any valid string path is acceptable. The string could be a URL. Valid"
+              },
+              {
+                "id": "fieldId_2",
+                "fieldName": "colspecs",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Integer",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "infer",
+                "help": "A list of tuples giving the extents of the fixed-width"
+              },
+              {
+                "id": "fieldId_3",
+                "fieldName": "widths",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Integer",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "A list of field widths which can be used instead of 'colspecs' if"
+              },
+              {
+                "id": "fieldId_4",
+                "fieldName": "infer_nrows",
+                "displayName": null,
+                "userValue": null,
+                "parameter_data_type": "Integer",
+                "type": "input",
+                "is_required": false,
+                "parameter_default_value": "100",
+                "help": "The number of rows to consider when letting the parser determine the"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "connTypeId_2",
+        "type": "pattern",
+        "displayName": "Pattern",
+        "connections": []
+      },
+      {
+        "id": "connTypeId_3",
+        "type": "database",
+        "displayName": "Database",
+        "connections": [
+          {
+            "id": "dbId_1",
+            "name": "postgreSql",
+            "displayName": "PostgreSQL",
+            "functionName": "read_sql",
+            "isFwf": false,
+            "returnType": null,
+            "connectionParameters": [
+              {
+                "id": "fieldId_1",
+                "fieldName": "instanceName",
+                "displayName": "Instance Name",
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": true,
+                "parameter_default_value": null,
+                "help": "Any valid string is acceptable. The string could be Valid"
+              },
+              {
+                "id": "fieldId_2",
+                "fieldName": "hostAddress",
+                "displayName": "Host Address",
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": true,
+                "parameter_default_value": null,
+                "help": "host name is required to connect database"
+              },
+              {
+                "id": "fieldId_3",
+                "fieldName": "userName",
+                "displayName": "User Name",
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": true,
+                "parameter_default_value": null,
+                "help": "please provide user name"
+              },
+              {
+                "id": "fieldId_4",
+                "fieldName": "password",
+                "displayName": "Password",
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": true,
+                "parameter_default_value": null,
+                "help": "please provide password"
+              },
+              {
+                "id": "fieldId_5",
+                "fieldName": "portNo",
+                "displayName": "Port Number",
+                "userValue": null,
+                "parameter_data_type": "integer",
+                "type": "input",
+                "is_required": true,
+                "parameter_default_value": null,
+                "help": "port number should be integer"
+              }
+            ]
+          },
+          {
+            "id": "dbId_2",
+            "name": "MSSQL",
+            "displayName": "Microsoft SQL server",
+            "functionName": "read_sql",
+            "isFwf": false,
+            "returnType": null,
+            "connectionParameters": [
+              {
+                "id": "fieldId_1",
+                "fieldName": "instanceName",
+                "displayName": "Instance Name",
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": true,
+                "parameter_default_value": null,
+                "help": "Any valid string is acceptable. The string could be Valid"
+              },
+              {
+                "id": "fieldId_2",
+                "fieldName": "hostAddress",
+                "displayName": "Host Address",
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": true,
+                "parameter_default_value": null,
+                "help": "host name is required to connect database"
+              },
+              {
+                "id": "fieldId_3",
+                "fieldName": "userName",
+                "displayName": "User Name",
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": true,
+                "parameter_default_value": null,
+                "help": "please provide user name"
+              },
+              {
+                "id": "fieldId_4",
+                "fieldName": "password",
+                "displayName": "Password",
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": true,
+                "parameter_default_value": null,
+                "help": "please provide password"
+              },
+              {
+                "id": "fieldId_5",
+                "fieldName": "portNo",
+                "displayName": "Port Number",
+                "userValue": null,
+                "parameter_data_type": "integer",
+                "type": "input",
+                "is_required": true,
+                "parameter_default_value": null,
+                "help": "port number should be integer"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}]

@@ -1,0 +1,6 @@
+invalid_msg = 'Invalid input, Not able to make connection...'
+internal_err_msg = 'Something went wrong...'
+invalid_data_fm_db = 'Got invalid data from source.'
+success_msg = 'Success'
+timeout = 'Request timeout please try again later.'
+no_data = 'No data available.'

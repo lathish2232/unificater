@@ -1,0 +1,22 @@
+[2020-12-25 11:36:36,615] INFO [audit] - /connectionTypes | GET | 200 | 0.001 | 2020-12-25 11:36:35.883 | 2020-12-25 11:36:36.615 | Success
+[2020-12-25 11:36:47,420] INFO [audit] - /connectionTypes/database | GET | 200 | 0.0 | 2020-12-25 11:36:47.356 | 2020-12-25 11:36:47.420 | Success
+[2020-12-25 11:36:54,588] INFO [audit] - /connectionTypes/database/postgreSql | GET | 200 | 0.0 | 2020-12-25 11:36:54.537 | 2020-12-25 11:36:54.588 | Success
+[2020-12-25 11:38:02,491] INFO [audit] - /flow | POST | 201 | 0.0 | 2020-12-25 11:38:02.184 | 2020-12-25 11:38:02.491 | Flow boom123 created successfully.
+[2020-12-25 11:41:18,439] INFO [audit] - /flow | DELETE | 202 | 0.0 | 2020-12-25 11:41:18.204 | 2020-12-25 11:41:18.439 | Flow boom123 has been deleted successfully
+[2020-12-25 11:41:26,024] INFO [audit] - /flow | POST | 201 | 0.001 | 2020-12-25 11:41:25.265 | 2020-12-25 11:41:26.024 | Flow boom123 created successfully.
+[2020-12-25 11:45:17,217] INFO [audit] - /flow | DELETE | 202 | 0.001 | 2020-12-25 11:45:16.553 | 2020-12-25 11:45:17.217 | Flow boom123 has been deleted successfully
+[2020-12-25 11:45:25,982] INFO [audit] - /flow | POST | 201 | 0.0 | 2020-12-25 11:45:25.686 | 2020-12-25 11:45:25.982 | Flow boom123 created successfully.
+[2020-12-25 11:53:54,402] INFO [audit] - /connectionTypes/database/postgreSql | GET | 200 | 0.0 | 2020-12-25 11:53:53.950 | 2020-12-25 11:53:54.402 | Success
+[2020-12-25 11:54:55,194] INFO [audit] - /boom123/instances/instancesId_1/dataInstances/dataInstancesId_1 | GET | 200 | 0.001 | 2020-12-25 11:54:54.449 | 2020-12-25 11:54:55.194 | Success
+[2020-12-25 11:55:09,058] INFO [audit] - /boom123/instances/instancesId_1 | GET | 200 | 0.0 | 2020-12-25 11:55:08.734 | 2020-12-25 11:55:09.058 | Success
+[2020-12-25 11:55:41,180] INFO [audit] - /boom123/instances/instancesId_1/dataInstances/dataInstancesId_1 | GET | 200 | 0.0 | 2020-12-25 11:55:40.953 | 2020-12-25 11:55:41.180 | Success
+[2020-12-25 11:56:29,033] INFO [audit] - /boom123/instances/instancesId_1 | GET | 200 | 0.001 | 2020-12-25 11:56:28.149 | 2020-12-25 11:56:29.033 | Success
+[2020-12-25 12:01:10,959] INFO [audit] - /connectionTypes/singleFile | GET | 200 | 0.013 | 2020-12-25 12:00:58.084 | 2020-12-25 12:01:10.959 | Success
+[2020-12-25 12:40:11,545] INFO [audit] - /flow | DELETE | 202 | 0.0 | 2020-12-25 12:40:11.174 | 2020-12-25 12:40:11.545 | Flow boom123 has been deleted successfully
+[2020-12-25 12:40:23,137] INFO [audit] - /flow | POST | 201 | 0.001 | 2020-12-25 12:40:22.260 | 2020-12-25 12:40:23.137 | Flow boom123 created successfully.
+[2020-12-25 12:53:42,740] INFO [audit] - /boom123/instances | GET | 200 | 0.001 | 2020-12-25 12:53:42.173 | 2020-12-25 12:53:42.740 | Success
+[2020-12-25 12:53:54,343] INFO [audit] - /boom123/instances/dataInstancesId_1 | GET | 204 | 0.0 | 2020-12-25 12:53:54.189 | 2020-12-25 12:53:54.343 | No data available.
+[2020-12-25 12:54:03,114] INFO [audit] - /boom123/instances/InstancesId_1 | GET | 204 | 0.0 | 2020-12-25 12:54:02.998 | 2020-12-25 12:54:03.114 | No data available.
+[2020-12-25 12:54:12,602] INFO [audit] - /boom123/instances/instancesId_1 | GET | 200 | 0.0 | 2020-12-25 12:54:12.345 | 2020-12-25 12:54:12.602 | Success
+[2020-12-25 12:54:23,904] INFO [audit] - /boom123/instances/instancesId_1/connectionParameters | GET | 200 | 0.0 | 2020-12-25 12:54:23.764 | 2020-12-25 12:54:23.904 | Success
+[2020-12-25 12:58:36,671] INFO [audit] - /boom123/instances/instancesId_1/ | GET | 204 | 0.001 | 2020-12-25 12:58:35.972 | 2020-12-25 12:58:36.671 | No data available.
