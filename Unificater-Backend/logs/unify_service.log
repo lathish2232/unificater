@@ -547,3 +547,5 @@ UnboundLocalError: local variable 'conn_params' referenced before assignment
 [2020-12-29 13:31:50,393] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():48] MongoDB connection closed
 [2020-12-29 13:32:03,505] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():39] Creating MongoDB connection
 [2020-12-29 13:32:03,597] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():48] MongoDB connection closed
+[2020-12-29 15:00:11,575] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():39] Creating MongoDB connection
+[2020-12-29 15:00:11,753] INFO [unify_service] [C:\Users\CSC\Desktop\unificater\Lathish\Unificater-Backend\service\util\db_utils.py.Mongo_DB_Connector():48] MongoDB connection closed
