@@ -50,7 +50,9 @@ def process_request(request):
                 elif url_path == '/connectionTypes/database/' + m2.group(1):
                     data = get_db_connection_types(request, url_path)
             else:
-                if url_path.endswith('/extractdata'):
+                if url_path.endswith('/database'):
+                    data = meta_obj.get_metadata(url_path, request)
+                elif url_path.endswith('/extractdata'):
                     data = meta_obj.show_table_data(url_path)
                 elif url_path.endswith('/showcollections'):
                     data = list_collection_names()
