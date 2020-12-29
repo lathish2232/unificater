@@ -17,7 +17,6 @@ class db_metadata(Data_source):
         return record
 
     def get_metadata(self,urlpath,request):  
-        print('..'*52)     
         record =self.getCollectionData(urlpath)
         url=urlpath.split('/database',1)[0]
         msJson =extract_sub_json(url,record)[3]
