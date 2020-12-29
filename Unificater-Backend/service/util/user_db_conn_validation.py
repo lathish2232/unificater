@@ -1,5 +1,5 @@
 from psycopg2 import  OperationalError
-from mysql.connector.errors import InterfaceError, InterfaceError,DatabaseError
+from mysql.connector.errors import InterfaceError, ProgrammingError,DatabaseError
 import mysql.connector
 import psycopg2
 
@@ -39,7 +39,7 @@ class instance_db_validation(Mongo_DB_Connector,FlowData):
                 try:
                     connection= mysql.connector.connect(host=host, user=user, password=password)
                     connection.close()
-                except (InterfaceError, InterfaceError,DatabaseError) as error:
+                except (InterfaceError, ProgrammingError,DatabaseError) as error:
                     return JsonResponse(unauthorized(error=str(error).rstrip()), status=status.HTTP_401_UNAUTHORIZED)
             self.insertMasterJsonItems(record, keys, 0, request_body)
             self.db[collection].update_one({f'{collection}.UFID': ufid}, {'$set': record})
