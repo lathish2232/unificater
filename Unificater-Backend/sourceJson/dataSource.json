@@ -660,7 +660,7 @@
                 "userValue": null,
                 "parameter_data_type": "integer",
                 "type": "input",
-                "is_required": true,
+                "is_required": false,
                 "parameter_default_value": null,
                 "help": "port number should be integer"
               }
@@ -725,7 +725,73 @@
                 "userValue": null,
                 "parameter_data_type": "integer",
                 "type": "input",
+                "is_required": false,
+                "parameter_default_value": null,
+                "help": "port number should be integer"
+              }
+              
+            ]
+          },
+          {
+            "id": "dbId_3",
+            "name": "mySql",
+            "displayName": "MySQL",
+            "functionName": "read_sql",
+            "isFwf": false,
+            "returnType": null,
+            "connectionParameters": [
+              {
+                "id": "fieldId_1",
+                "fieldName": "instanceName",
+                "displayName": "Instance Name",
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
                 "is_required": true,
+                "parameter_default_value": null,
+                "help": "Any valid string is acceptable. The string could be Valid"
+              },
+              {
+                "id": "fieldId_2",
+                "fieldName": "hostAddress",
+                "displayName": "Host Address",
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": true,
+                "parameter_default_value": null,
+                "help": "host name is required to connect database"
+              },
+              {
+                "id": "fieldId_3",
+                "fieldName": "userName",
+                "displayName": "User Name",
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": true,
+                "parameter_default_value": null,
+                "help": "please provide user name"
+              },
+              {
+                "id": "fieldId_4",
+                "fieldName": "password",
+                "displayName": "Password",
+                "userValue": null,
+                "parameter_data_type": "String",
+                "type": "input",
+                "is_required": true,
+                "parameter_default_value": null,
+                "help": "please provide password"
+              },
+              {
+                "id": "fieldId_5",
+                "fieldName": "portNo",
+                "displayName": "Port Number",
+                "userValue": null,
+                "parameter_data_type": "integer",
+                "type": "input",
+                "is_required": false,
                 "parameter_default_value": null,
                 "help": "port number should be integer"
               }

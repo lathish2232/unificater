@@ -2,7 +2,7 @@ class FlowData():
     def __init__(self):
         pass
 
-    # --
+  
     def updateMasterJsonItems(self, j, keys, value):
         for key in keys[:-1]:
             if isinstance(key, str):
@@ -12,7 +12,7 @@ class FlowData():
         j[keys[-1]] = value
 
     def deleteMasterJsonItems(self, j, keys):
-        # return ''
+        
         for key in keys[:-1]:
             if isinstance(key, str):
                 j = j.setdefault(key, {})

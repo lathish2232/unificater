@@ -40,10 +40,9 @@ class db_metadata(Data_source):
                 try:
                     connect_str = f"postgres://{user}:{password}@{host}/{dbname}"
                     postgres_conn = create_engine(connect_str)
-                    if dbname:
+                    if info:
                         metaType =info.get('info','').split('>')[-1]
                         schema = info.get('info','').split('>')[1]
-                    if request.method=='POST':
                         if metaType == "schemas":
                             sql = 'select catalog_name as "dbName",schema_name as "schemaName" from information_schema.schemata;'
                         elif metaType == "tables":
@@ -56,10 +55,9 @@ class db_metadata(Data_source):
                                     select table_catalog as "dbName" ,table_schema as "tableSchema",table_name as "tableName" ,COLUMN_NAME as"columnName", data_type as"dataType" from INFORMATION_SCHEMA.columns
                                     WHERE table_schema = '{schema}' and table_name='{tName}' ORDER BY ORDINAL_POSITION;"""
                         idtype=metaType[:-1]
-                    elif request.method=='GET':
-                        if type =="database":
-                            sql="""SELECT datname as "dbName" FROM pg_database
-                                                WHERE datistemplate = false;"""
+                    elif type =="database":
+                        sql="""SELECT datname as "dbName" FROM pg_database
+                                            WHERE datistemplate = false;"""
                         idtype =type
                     result = postgres_conn.execute(sql)
                     columnnames = [i for i in postgres_conn.execute(sql).keys()]
@@ -75,8 +73,32 @@ class db_metadata(Data_source):
                         return JsonResponse(success_response(data=meta_data), status=status.HTTP_200_OK)
                 except Exception as error:
                     return JsonResponse(unauthorized(error=str(error).rstrip()), status=status.HTTP_401_UNAUTHORIZED)
+                    
                 finally:
                     postgres_conn.dispose()
+            elif  msJson['name']=='mySql':
+                try:
+                    connect_str = f"mysql://{user}:{password}@{host}"
+                    mysql_conn = create_engine(connect_str)
+                    if info:
+                        metaType =info.get('info','').split('>')[-1]
+                        table = info.get('info','').split('>')[1]
+                        if metaType == "tables":
+                            sql = f"""
+                                    Select Distinct TABLE_SCHEMA,TABLE_NAME from INFORMATION_SCHEMA.columns where TABLE_SCHEMA ='{schema}' ;"""
+                        elif metaType == "columns":
+                            sql = f"""Select Distinct TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME from INFORMATION_SCHEMA.columns where TABLE_SCHEMA ='{schema}' and TABLE_NAME='{table}';"""
+                                        
+                    elif type =="database": 
+                        sql="show databases"
+                    
+                except Exception as error:
+                    raise
+                    return JsonResponse(unauthorized(error=str(error).rstrip()), status=status.HTTP_401_UNAUTHORIZED)
+                    
+                finally:
+                    mysql_conn.dispose()
+    
     
     def show_table_data(self,url_path):
         record={}

@@ -14,5 +14,6 @@ CONN_TYPE_ID = {
 }
 DATABASE_ID = {
     'postgreSql': 'dbId_1',
-    'MSSQL': 'dbId_2'
+    'MSSQL': 'dbId_2',
+    'mySql':'dbId_3'
 }

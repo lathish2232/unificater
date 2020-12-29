@@ -35,3 +35,32 @@
 [2020-12-25 19:35:41,475] INFO [audit] - /connectionTypes/singleFile | GET | 200 | 0.016 | 2020-12-25 19:35:25.879 | 2020-12-25 19:35:41.475 | Success
 [2020-12-25 19:37:20,826] INFO [audit] - /cust_poj/instances/instancesId_2 | GET | 200 | 0.001 | 2020-12-25 19:37:19.995 | 2020-12-25 19:37:20.826 | Success
 [2020-12-25 19:37:39,133] INFO [audit] - /cust_poj/instances/instancesId_2/dataInstances/dataInstancesId_1 | GET | 200 | 0.001 | 2020-12-25 19:37:38.498 | 2020-12-25 19:37:39.133 | Success
+[2020-12-25 19:49:52,265] INFO [audit] - /test123 | GET | 200 | 0.001 | 2020-12-25 19:49:51.520 | 2020-12-25 19:49:52.265 | Success
+[2020-12-28 13:45:29,019] INFO [audit] - /test123 | GET | 200 | 0.0 | 2020-12-28 13:45:28.923 | 2020-12-28 13:45:29.018 | Success
+[2020-12-28 13:46:49,601] INFO [audit] - /flow | DELETE | 500 | 0.001 | 2020-12-28 13:46:48.863 | 2020-12-28 13:46:49.601 | Something went wrong...
+[2020-12-28 13:46:56,081] INFO [audit] - /flow | DELETE | 202 | 0.0 | 2020-12-28 13:46:55.726 | 2020-12-28 13:46:56.081 | Flow test123 has been deleted successfully
+[2020-12-28 13:47:25,526] INFO [audit] - /cust_poj | GET | 200 | 0.0 | 2020-12-28 13:47:25.155 | 2020-12-28 13:47:25.526 | Success
+[2020-12-28 17:14:47,854] INFO [audit] - /connectionTypes/database | GET | 200 | 0.0 | 2020-12-28 17:14:47.493 | 2020-12-28 17:14:47.854 | Success
+[2020-12-28 17:15:07,436] INFO [audit] - /connectionTypes/database | GET | 200 | 0.001 | 2020-12-28 17:15:06.750 | 2020-12-28 17:15:07.436 | Success
+[2020-12-28 17:17:37,317] INFO [audit] - /connectionTypes/database | GET | 200 | 0.001 | 2020-12-28 17:17:36.652 | 2020-12-28 17:17:37.317 | Success
+[2020-12-28 17:19:51,737] INFO [audit] - /connectionTypes | GET | 200 | 0.001 | 2020-12-28 17:19:50.963 | 2020-12-28 17:19:51.737 | Success
+[2020-12-28 17:20:01,957] INFO [audit] - /connectionTypes/database | GET | 200 | 0.001 | 2020-12-28 17:20:01.372 | 2020-12-28 17:20:01.957 | Success
+[2020-12-28 17:24:06,598] INFO [audit] - /connectionTypes/database | GET | 200 | 0.0 | 2020-12-28 17:24:06.484 | 2020-12-28 17:24:06.597 | Success
+[2020-12-28 17:39:31,005] INFO [audit] - /connectionTypes/database | GET | 200 | 0.006 | 2020-12-28 17:39:24.900 | 2020-12-28 17:39:31.005 | Success
+[2020-12-28 17:42:01,082] INFO [audit] - /connectionTypes/database | GET | 200 | 0.001 | 2020-12-28 17:42:00.265 | 2020-12-28 17:42:01.082 | Success
+[2020-12-28 17:44:57,521] INFO [audit] - /connectionTypes | GET | 200 | 0.006 | 2020-12-28 17:44:51.484 | 2020-12-28 17:44:57.520 | Success
+[2020-12-28 17:51:10,349] INFO [audit] - /connectionTypes | GET | 200 | 0.0 | 2020-12-28 17:51:10.004 | 2020-12-28 17:51:10.349 | Success
+[2020-12-28 18:02:39,380] INFO [audit] - /connectionTypes/database | GET | 200 | 0.0 | 2020-12-28 18:02:39.304 | 2020-12-28 18:02:39.380 | Success
+[2020-12-28 18:13:12,284] INFO [audit] - /connectionTypes/database/mySql | GET | 500 | 0.0 | 2020-12-28 18:13:12.245 | 2020-12-28 18:13:12.283 | Something went wrong...
+[2020-12-28 18:14:27,705] INFO [audit] - /connectionTypes/database/mySql | GET | 200 | 0.001 | 2020-12-28 18:14:26.253 | 2020-12-28 18:14:27.705 | Success
+[2020-12-28 18:25:01,878] INFO [audit] - /cust_poj | GET | 200 | 0.001 | 2020-12-28 18:25:01.249 | 2020-12-28 18:25:01.878 | Success
+[2020-12-28 18:26:33,539] INFO [audit] - /cust_poj/instances/instancesId_2 | GET | 200 | 0.001 | 2020-12-28 18:26:32.796 | 2020-12-28 18:26:33.539 | Success
+[2020-12-28 18:26:49,628] INFO [audit] - /cust_poj/instances/instancesId_1 | GET | 200 | 0.001 | 2020-12-28 18:26:48.971 | 2020-12-28 18:26:49.627 | Success
+[2020-12-28 19:06:31,976] INFO [audit] - /connectionTypes/database | GET | 200 | 0.0 | 2020-12-28 19:06:31.863 | 2020-12-28 19:06:31.976 | Success
+[2020-12-28 19:06:42,374] INFO [audit] - /connectionTypes/database/mySql | GET | 200 | 0.001 | 2020-12-28 19:06:41.587 | 2020-12-28 19:06:42.373 | Success
+[2020-12-28 19:50:41,549] INFO [audit] - /admin | GET | 204 | 0.001 | 2020-12-28 19:50:40.846 | 2020-12-28 19:50:41.548 | No data available.
+[2020-12-28 19:50:43,343] INFO [audit] - /favicon.ico | GET | 204 | 0.001 | 2020-12-28 19:50:42.746 | 2020-12-28 19:50:43.341 | No data available.
+[2020-12-28 19:51:12,929] INFO [audit] - /admin/ | GET | 204 | 0.0 | 2020-12-28 19:51:12.855 | 2020-12-28 19:51:12.929 | No data available.
+[2020-12-28 19:51:14,211] INFO [audit] - /favicon.ico | GET | 204 | 0.0 | 2020-12-28 19:51:14.144 | 2020-12-28 19:51:14.210 | No data available.
+[2020-12-28 20:10:41,535] INFO [audit] - /cust_poj/instances | GET | 200 | 0.001 | 2020-12-28 20:10:40.721 | 2020-12-28 20:10:41.535 | Success
+[2020-12-28 20:18:34,432] INFO [audit] - /favicon.ico | GET | 204 | 0.0 | 2020-12-28 20:18:34.389 | 2020-12-28 20:18:34.432 | No data available.

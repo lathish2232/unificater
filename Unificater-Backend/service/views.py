@@ -50,10 +50,7 @@ def process_request(request):
                 elif url_path == '/connectionTypes/database/' + m2.group(1):
                     data = get_db_connection_types(request, url_path)
             else:
-                if url_path.endswith('/database'):
-                    # take m4.group(2) for Instance_id and m4.group(3)
-                    data = meta_obj.get_metadata(url_path, request)
-                elif url_path.endswith('/extractdata'):
+                if url_path.endswith('/extractdata'):
                     data = meta_obj.show_table_data(url_path)
                 elif url_path.endswith('/showcollections'):
                     data = list_collection_names()
@@ -65,8 +62,6 @@ def process_request(request):
                 data = create_flow(request)
             elif url_path == m3.group(1) + '/instances':
                 data = conn_obj.createFlow(request)
-            elif  url_path.endswith('/database'):
-                data = meta_obj.get_metadata(url_path, request)
         elif request.method == 'PUT':
             data = conn_obj.updateItems(request)
         elif request.method == 'DELETE':

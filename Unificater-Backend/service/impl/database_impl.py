@@ -47,9 +47,9 @@ def get_databases(request, url_ends):
 def get_db_connection_types(request, url_path):
     try:
         start = time.time()
-        LOGGER.info('Get databases connection params')
+        LOGGER.info('Get databases connection params...')
         url_ends = url_path.split('/')[-1]
-        if url_ends == 'postgreSql' or url_ends == 'MSSQL':
+        if url_ends == 'postgreSql' or url_ends == 'MSSQL'or url_ends == 'mySql':
             url = '/connectionJson/connectionTypes/' + CONN_TYPE_ID.get(
                 'database') + '/connections/' + DATABASE_ID.get(url_ends) #+ '/connectionParameters'
             conn_params = get_data_from_collection_json('dataSource', url)
