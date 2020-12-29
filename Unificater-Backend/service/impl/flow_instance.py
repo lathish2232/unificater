@@ -37,7 +37,6 @@ class Data_source(Mongo_DB_Connector, FlowData):
         return JsonResponse(success_response(data="updated successfylly"),status=status.HTTP_200_OK)
 
     def createFlow(self, request):
-        print('>>'*30)
         d = {'id': None}
         url = request.get_full_path()
         collection = url.split('/')[1]

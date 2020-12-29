@@ -1,0 +1,79 @@
+{
+   "dataInstances":[
+      {
+         "id":"dataInstancesId_1",
+         "functionName":"read_sql",
+         "databse":"custDB",
+         "schema":"fom",
+         "table":"Emp_1",
+         "type":"table",
+         "query_text":null,
+         "dataparametars":[
+            {
+               "field_id":"1",
+               "field_name":"sql",
+               "user_value":null,
+               "parameter_data_type":"String",
+               "type":"input",
+               "isrequired":"TRUE",
+               "help":"SQL query to be executed."
+            },
+            {
+               "field_id":"2",
+               "field_name":"con",
+               "user_value":null,
+               "parameter_data_type":"String",
+               "type":"input",
+               "isrequired":"TRUE",
+               "help":"Using SQLAlchemy makes it possible to use any DB supported by that"
+            },
+            {
+               "field_id":"3",
+               "field_name":"index_col",
+               "user_value":null,
+               "parameter_data_type":"String",
+               "type":"input",
+               "isrequired":"FALSE",
+               "help":"Column(s) to set as index(MultiIndex)."
+            },
+            {
+               "field_id":"4",
+               "field_name":"coerce_float",
+               "user_value":null,
+               "parameter_data_type":"Boolean",
+               "type":"input",
+               "isrequired":"FALSE",
+               "parameter_default_value":"TRUE",
+               "help":"Attempts to convert values of non-string, non-numeric objects (like"
+            },
+            {
+               "field_id":"5",
+               "field_name":"params",
+               "user_value":null,
+               "parameter_data_type":"List",
+               "type":"input",
+               "isrequired":"FALSE",
+               "help":"List of parameters to pass to execute method. The syntax used"
+            },
+            {
+               "field_id":"6",
+               "field_name":"parse_dates",
+               "user_value":null,
+               "parameter_data_type":"List",
+               "type":"input",
+               "isrequired":"FALSE",
+               "help":"- List of column names to parse as dates."
+            },
+            {
+               "field_id":"7",
+               "field_name":"chunksize",
+               "user_value":null,
+               "parameter_data_type":"Integer",
+               "type":"input",
+               "isrequired":"FALSE",
+               "help":"If specified, return an iterator where"
+            }
+         ]
+      }
+   ]
+}

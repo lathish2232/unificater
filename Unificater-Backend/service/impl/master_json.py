@@ -44,7 +44,7 @@ def create_flow(request):
         flow_name = request.data.get('Name', None)
         doc = {flow_name: {'UFID': str(uuid4()),
                            'instances': [],
-                           'Nodes': []}}
+                           'nodes': []}}
         mongo_db = get_mongod_connection()
         mongo_db.create_collection(flow_name, codec_options=codec_options)
         mongo_db[flow_name].insert_one(doc)
